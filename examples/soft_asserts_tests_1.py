@@ -12,6 +12,10 @@ STEP_1 = 'step 1'
 STEP_2 = 'step 2'
 
 
+def __raise_value_error():
+    raise ValueError('ValueError raised')
+
+
 def test_01_assert_true():
     i = 1
     j = 2
@@ -67,4 +71,9 @@ def test_06_assert_raises_with_fail():
         # sun will raise TypeError
         _ = sum([1, '2'])
 
+    soft_asserts.assert_all()
+
+
+def test_07_assert_raises():
+    soft_asserts.assert_raises(ValueError, __raise_value_error)
     soft_asserts.assert_all()

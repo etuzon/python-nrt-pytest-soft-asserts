@@ -7,5 +7,5 @@ coverage_report/html
 coverage_report/html/*
 temp
 dist
-pytest_soft_assert.egg-info
+*egg-info
 build
