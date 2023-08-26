@@ -1,0 +1,11 @@
+venv*
+venv*/*
+.idea
+.idea/*
+**/__pycache__/**
+coverage_report/html
+coverage_report/html/*
+temp
+dist
+pytest_soft_assert.egg-info
+build
