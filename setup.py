@@ -16,7 +16,7 @@ setup(
     version=nrt_pytest_soft_asserts.__version__,
     author='Eyal Tuzon',
     author_email='eyal.tuzon.dev@gmail.com',
-    description='Hierarchical logging in yaml format',
+    description='Soft asserts for pytest',
     keywords='python python3 python-3 nrt pytest soft assert asserts assertion'
              'assertions soft-assert soft-asserts soft-assertion soft-assertions'
              'nrt-pytest-soft-asserts',
