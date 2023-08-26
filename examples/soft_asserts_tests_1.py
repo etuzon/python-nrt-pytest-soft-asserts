@@ -53,3 +53,18 @@ def test_04_skip_if_step_1_fail():
 @pytest.mark.soft_asserts(soft_asserts=soft_asserts, skip_steps=[STEP_2])
 def test_05_skip_if_step_2_fail():
     logger.info('print info')
+
+
+def test_06_assert_raises_with():
+    with soft_asserts.assert_raised_with(TypeError):
+        _ = sum([1, '2'])
+
+    soft_asserts.assert_all()
+
+
+def test_06_assert_raises_with_fail():
+    with soft_asserts.assert_raised_with(ValueError):
+        # sun will raise TypeError
+        _ = sum([1, '2'])
+
+    soft_asserts.assert_all()
