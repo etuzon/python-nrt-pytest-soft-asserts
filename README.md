@@ -8,7 +8,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/etuzon/python-nrt-pytest-soft-asserts/badge.svg)](https://coveralls.io/github/etuzon/pytohn-nrt-pytest-soft-asserts)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/etuzon/python-nrt-pytest-soft-asserts?style=plastic)
 ![GitHub last commit](https://img.shields.io/github/last-commit/etuzon/python-nrt-pytest-soft-asserts?style=plastic)
-[![DeepSource](https://deepsource.io/gh/etuzon/python-nrt-logging.svg/?label=active+issues&token=3pUgM1IEwZG6Gpuc065dKDxM)](https://deepsource.io/gh/etuzon/python-nrt-pytest-soft-asserts/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/etuzon/python-nrt-pytest-soft-asserts.svg/?label=active+issues&token=3pUgM1IEwZG6Gpuc065dKDxM)](https://deepsource.io/gh/etuzon/python-nrt-pytest-soft-asserts/?ref=repository-badge)
 
 ### Supported asserts:
 

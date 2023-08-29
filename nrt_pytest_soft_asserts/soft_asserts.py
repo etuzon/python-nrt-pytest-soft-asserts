@@ -144,8 +144,7 @@ class SoftAsserts:
             self.failure_steps = (
                 list(dict.fromkeys(
                         [failure.step for failure in failures
-                         if failure.step is not None]
-                )))
+                         if failure.step is not None])))
 
             raise AssertionError('\n'.join([failure.error for failure in failures]))
 
