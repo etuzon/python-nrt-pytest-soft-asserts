@@ -2,11 +2,6 @@ from dataclasses import dataclass
 from typing import Callable, Optional
 
 
-"""
-@author: Eyal Tuzon.
-"""
-
-
 @dataclass
 class Failure:
     error: str
@@ -14,6 +9,12 @@ class Failure:
 
 
 class SoftAsserts:
+    """
+    Soft asserts class.
+
+    @author: Eyal Tuzon.
+    """
+
     __failures: list[Failure] = []
     __logger = None
     __print_method: Optional[Callable] = None
@@ -93,6 +94,11 @@ class SoftAsserts:
     def assert_almost_equal(self, first, second, delta, message=None):
         if not self.__is_almost_equal(first, second, delta):
             error = message or f'Assertion failed: {first} not almost equal to {second}'
+            self.__append_to_failures(error)
+
+    def assert_not_almost_equal(self, first, second, delta, message=None):
+        if self.__is_almost_equal(first, second, delta):
+            error = message or f'Assertion failed: {first} almost equal to {second}'
             self.__append_to_failures(error)
 
     def assert_raises(self, exception, method: Callable, *args, **kwargs):
