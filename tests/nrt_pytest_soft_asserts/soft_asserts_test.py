@@ -98,8 +98,13 @@ def test_assert_not_is_instance(before_test):
     soft_asserts.assert_all()
 
 
-def test_almost_equal(before_test):
+def test_assert_almost_equal(before_test):
     soft_asserts.assert_almost_equal(1.0001, 1.0002, 0.002)
+    soft_asserts.assert_all()
+
+
+def test_assert_not_almost_equal(before_test):
+    soft_asserts.assert_not_almost_equal(1.0001, 1.0002, 0.000001)
     soft_asserts.assert_all()
 
 
@@ -220,10 +225,17 @@ def test_assert_not_is_instance_fail(before_test):
     __verify_assert_all_raised_exception()
 
 
-def test_almost_equal_fail(before_test):
+def test_assert_almost_equal_fail(before_test):
     soft_asserts.assert_almost_equal(1.001, 1.0002, 0.00001)
     soft_asserts.assert_almost_equal(1.001, 1.0002, 0.002)
     assert len(soft_asserts.failures) == 1
+    __verify_assert_all_raised_exception()
+
+
+def test_assert_not_almost_equal_fail(before_test):
+    soft_asserts.assert_not_almost_equal(1.0001, 1.0002, 0.001)
+    soft_asserts.assert_not_almost_equal(1.0001, 1.0002, 0.002)
+    assert len(soft_asserts.failures) == 2
     __verify_assert_all_raised_exception()
 
 
