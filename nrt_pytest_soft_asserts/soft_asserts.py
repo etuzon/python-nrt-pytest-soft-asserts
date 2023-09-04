@@ -31,85 +31,131 @@ class SoftAsserts:
     def unset_step(self):
         self.__current_step = None
 
-    def assert_true(self, condition, message=None):
+    def assert_true(self, condition, message=None) -> bool:
         if not condition:
             error = message or 'Expected True, got False.'
             self.__append_to_failures(error)
+            return False
 
-    def assert_false(self, condition, message=None):
+        return True
+
+    def assert_false(self, condition, message=None) -> bool:
         if condition:
             error = message or 'Expected False, got True.'
             self.__append_to_failures(error)
+            return False
 
-    def assert_equal(self, first, second, message=None):
+        return True
+
+    def assert_equal(self, first, second, message=None) -> bool:
         if first != second:
             error = message or f'{first} != {second}'
             self.__append_to_failures(error)
+            return False
 
-    def assert_not_equal(self, first, second, message=None):
+        return True
+
+    def assert_not_equal(self, first, second, message=None) -> bool:
         if first == second:
             error = message or f'{first} == {second}'
             self.__append_to_failures(error)
+            return False
 
-    def assert_is(self, first, second, message=None):
+        return True
+
+    def assert_is(self, first, second, message=None) -> bool:
         if first is not second:
             error = message or f'{first} is not {second}'
             self.__append_to_failures(error)
+            return False
 
-    def assert_is_not(self, first, second, message=None):
+        return True
+
+    def assert_is_not(self, first, second, message=None) -> bool:
         if first is second:
             error = message or f'{first} is {second}'
             self.__append_to_failures(error)
+            return False
 
-    def assert_is_none(self, obj, message=None):
+        return True
+
+    def assert_is_none(self, obj, message=None) -> bool:
         if obj is not None:
             error = message or f'{obj} is not None'
             self.__append_to_failures(error)
+            return False
 
-    def assert_is_not_none(self, obj, message=None):
+        return True
+
+    def assert_is_not_none(self, obj, message=None) -> bool:
         if obj is None:
             error = message or 'obj is None'
             self.__append_to_failures(error)
+            return False
 
-    def assert_in(self, obj, container, message=None):
+        return True
+
+    def assert_in(self, obj, container, message=None) -> bool:
         if obj not in container:
             error = message or f'{obj} not in {container}'
             self.__append_to_failures(error)
+            return False
 
-    def assert_not_in(self, obj, container, message=None):
+        return True
+
+    def assert_not_in(self, obj, container, message=None) -> bool:
         if obj in container:
             error = message or f'{obj} in {container}'
             self.__append_to_failures(error)
+            return False
 
-    def assert_is_instance(self, obj, cls, message=None):
+        return True
+
+    def assert_is_instance(self, obj, cls, message=None) -> bool:
         if not isinstance(obj, cls):
             error = message or f'{obj} is not instance of {cls}'
             self.__append_to_failures(error)
+            return False
 
-    def assert_not_is_instance(self, obj, cls, message=None):
+        return True
+
+    def assert_not_is_instance(self, obj, cls, message=None) -> bool:
         if isinstance(obj, cls):
             error = message or f'{obj} is instance of {cls}'
             self.__append_to_failures(error)
+            return False
 
-    def assert_almost_equal(self, first, second, delta, message=None):
+        return True
+
+    def assert_almost_equal(self, first, second, delta, message=None) -> bool:
         if not self.__is_almost_equal(first, second, delta):
             error = message or f'Assertion failed: {first} not almost equal to {second}'
             self.__append_to_failures(error)
+            return False
 
-    def assert_not_almost_equal(self, first, second, delta, message=None):
+        return True
+
+    def assert_not_almost_equal(self, first, second, delta, message=None) -> bool:
         if self.__is_almost_equal(first, second, delta):
             error = message or f'Assertion failed: {first} almost equal to {second}'
             self.__append_to_failures(error)
+            return False
 
-    def assert_raises(self, exception, method: Callable, *args, **kwargs):
+        return True
+
+    def assert_raises(self, exception, method: Callable, *args, **kwargs) -> bool:
         try:
             method(*args, **kwargs)
             error = f'{exception} not raised'
             self.__append_to_failures(error)
+            return False
         except Exception as e:
             if not isinstance(e, exception):
                 error = f'{e} is not instance of {exception}'
                 self.__append_to_failures(error)
+                return False
+
+        return True
 
     def assert_raised_with(self, exception, message=None):
         class AssertRaises:
