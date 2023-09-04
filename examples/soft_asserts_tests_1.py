@@ -19,8 +19,8 @@ def __raise_value_error():
 def test_01_assert_true():
     i = 1
     j = 2
-    soft_asserts.assert_true(i + j == 3)
-    logger.info('print info')
+    result = soft_asserts.assert_true(i + j == 3)
+    logger.info(f'result: {result}')
     soft_asserts.assert_all()
 
 
@@ -28,9 +28,10 @@ def test_02_assert_true_fail():
     i = 1
     j = 2
     # logger.error() will print messages to console for each assert that fails
-    soft_asserts.assert_true(i + j == 5)
-    soft_asserts.assert_equal(i, j, f'{i} is different from {j}')
-    logger.info('print info')
+    result = soft_asserts.assert_true(i + j == 5)
+    logger.info(f'result: {result}')
+    result = soft_asserts.assert_equal(i, j, f'{i} is different from {j}')
+    logger.info(f'result: {result}')
     soft_asserts.assert_all()
 
 
