@@ -1,10 +1,14 @@
 # nrt-pytest-soft-asserts
 
+## Version 1.0.6
+
+Support Python 3.8.
+
 ## Version 1.0.5
 
 ### New Features
 
-assert methods return True if assertion passes, False if assertion fails.
+Assert methods return True if assertion passes, False if assertion fails.
 
 Example:
 ```python
