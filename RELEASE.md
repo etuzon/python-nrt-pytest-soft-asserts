@@ -1,5 +1,9 @@
 # nrt-pytest-soft-asserts
 
+## Version 1.0.7
+
+Fix bug in Python 3.8 support.
+
 ## Version 1.0.6
 
 Support Python 3.8.

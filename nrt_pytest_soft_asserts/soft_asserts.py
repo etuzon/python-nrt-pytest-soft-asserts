@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Callable, Optional
+from typing import Callable, Optional, List
 
 
 @dataclass
@@ -15,11 +15,11 @@ class SoftAsserts:
     @author: Eyal Tuzon.
     """
 
-    __failures: list[Failure] = []
+    __failures: List[Failure] = []
     __logger = None
     __print_method: Optional[Callable] = None
     __current_step: Optional[str] = None
-    __failure_steps: list[str] = []
+    __failure_steps: List[str] = []
 
     def __init__(self):
         self.__validate_params()
