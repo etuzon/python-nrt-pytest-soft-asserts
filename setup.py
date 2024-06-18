@@ -18,8 +18,8 @@ setup(
     author_email='eyal.tuzon.dev@gmail.com',
     description='Soft asserts for pytest',
     keywords='python python3 python-3 nrt pytest soft assert asserts assertion'
-             'assertions soft-assert soft-asserts soft-assertion soft-assertions'
-             'nrt-pytest-soft-asserts',
+             ' assertions soft-assert soft-asserts soft-assertion soft-assertions'
+             ' nrt-pytest-soft-asserts',
     long_description_content_type='text/markdown',
     long_description=readme,
     url='https://github.com/etuzon/python-nrt-pytest-soft-asserts',
