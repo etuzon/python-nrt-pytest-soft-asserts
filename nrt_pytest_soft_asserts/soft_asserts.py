@@ -1,11 +1,21 @@
+import linecache
+import os
 from dataclasses import dataclass
 from typing import Callable, Optional, List
+import inspect
 
 
 @dataclass
 class Failure:
     error: str
     step: str
+    file_path: str
+    code_line: str
+    line_number: int
+
+    def __str__(self):
+        return f'{self.error} ' \
+               f'[{self.file_path}: {self.line_number}] {self.code_line}'
 
 
 class SoftAsserts:
@@ -198,7 +208,9 @@ class SoftAsserts:
                         [failure.step for failure in failures
                          if failure.step is not None])))
 
-            raise AssertionError('\n'.join([failure.error for failure in failures]))
+            errors = '\n'.join([str(failure) for failure in failures])
+
+            raise AssertionError(f'\n{errors}')
 
     def is_step_in_failure_steps(self, step: str) -> bool:
         return step in self.failure_steps
@@ -219,12 +231,27 @@ class SoftAsserts:
         self.__failure_steps = value
 
     def __append_to_failures(self, error):
-        self.__failures.append(Failure(error, self.__current_step))
-        self.__print_error_to_log(error)
+
+        file_path, code_line, line_number = \
+            self.__get_failure_file_path_and_line_code_and_line_number()
+
+        failure = \
+            Failure(
+                error=error,
+                step=self.__current_step,
+                file_path=file_path,
+                code_line=code_line,
+                line_number=line_number)
+
+        self.__failures.append(failure)
+
+        self.__print_error_to_log(failure)
 
     @classmethod
-    def __print_error_to_log(cls, error):
+    def __print_error_to_log(cls, failure: Failure):
         cls.__validate_params()
+
+        error = str(failure)
 
         if cls.__print_method:
             cls.__print_method(error)
@@ -255,3 +282,13 @@ class SoftAsserts:
     @classmethod
     def unset_print_method(cls):
         cls.__print_method = None
+
+    @classmethod
+    def __get_failure_file_path_and_line_code_and_line_number(cls):
+        frame = inspect.currentframe()
+        frame = frame.f_back.f_back.f_back
+        file_path = os.path.relpath(frame.f_code.co_filename)
+        line_number = frame.f_lineno
+        code_line = linecache.getline(file_path, line_number).strip()
+
+        return file_path, code_line, line_number
