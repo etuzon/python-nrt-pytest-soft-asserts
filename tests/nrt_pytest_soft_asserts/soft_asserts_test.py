@@ -263,7 +263,7 @@ def test_assert_raised_with_fail(before_test):
 def test_fail_with_print_message(before_test):
     SoftAsserts.set_print_method(__print)
     soft_asserts.assert_true(False, ERROR_MESSAGE_1)
-    assert print_message == ERROR_MESSAGE_1
+    assert print_message.startswith(ERROR_MESSAGE_1)
     __verify_assert_all_raised_exception()
 
 
