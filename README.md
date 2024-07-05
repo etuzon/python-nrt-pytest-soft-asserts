@@ -35,9 +35,8 @@
 In the end of each test, the soft asserts will be verified and the test will be marked as failed if any of the asserts failed.<br/>
 To verify the soft asserts in the middle of the test, call `soft_asserts.assert_all()`.<br/>
 <br/>
-assert_all() will raise _AssertionError_ if any of the asserts failed.
+assert_all() will raise _AssertionError_ if any of the asserts failed.<br/>
 
-<br/>
 #### Steps
 
 Each testing section can be divided to steps.<br/>
@@ -111,9 +110,9 @@ def test_skip_if_step_2_fail():
 Each assertion failure can be printed.<br/>
 This can be done by adding logger or by adding a print method.<br/>
 
-In case a logger will be added to soft asserts, then logger.error(message) will be used.<br/>
-
-In case a print method will be added to soft asserts, then print_method(message) will be used.<br/>
+ - In case a logger will be added to soft asserts, then logger.error(message) will be used.
+ - In case a print method will be added to soft asserts, then print_method(message) will be used.
+ - logger and print method cannot be added together.
 
 #### Error format
 
