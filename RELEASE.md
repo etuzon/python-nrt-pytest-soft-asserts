@@ -1,5 +1,9 @@
 # nrt-pytest-soft-asserts
 
+## Version 1.1.2
+
+Fix dependency issue.
+
 ## Version 1.1.1
 
 Fix bug in README.md.
