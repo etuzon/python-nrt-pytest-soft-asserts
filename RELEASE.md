@@ -1,5 +1,8 @@
 # nrt-pytest-soft-asserts
 
+## Version 1.1.3
+Support Python 3.13.
+
 ## Version 1.1.2
 
 Fix dependency issue.
