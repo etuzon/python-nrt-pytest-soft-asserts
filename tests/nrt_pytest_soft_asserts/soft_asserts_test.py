@@ -1,10 +1,10 @@
 import logging
-
 import pytest
+from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts, DuplicatedErrorsEnum
 
-from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts
 
 ERROR_MESSAGE_1 = 'error message 1'
+ERROR_MESSAGE_2 = 'error message 2'
 
 STEP_1 = 'step 1'
 STEP_2 = 'step 2'
@@ -263,7 +263,7 @@ def test_assert_raised_with_fail(before_test):
 def test_fail_with_print_message(before_test):
     SoftAsserts.set_print_method(__print)
     soft_asserts.assert_true(False, ERROR_MESSAGE_1)
-    assert print_message.startswith(ERROR_MESSAGE_1)
+    assert print_message.startswith(f'(Count: 1) {ERROR_MESSAGE_1}')
     __verify_assert_all_raised_exception()
 
 
@@ -357,6 +357,46 @@ def test_step_not_in_failure_steps_before_assert_all(before_test):
         soft_asserts.assert_all()
 
     assert soft_asserts.is_step_in_failure_steps(STEP_1)
+
+
+def test_print_duplicate_errors_value_no_duplicated_errors_code_source(before_test):
+    soft_asserts.print_duplicate_errors = \
+        DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE
+
+    __soft_assert_true(False, ERROR_MESSAGE_1)
+    __soft_assert_true(False, ERROR_MESSAGE_1)
+    __soft_assert_true(False, ERROR_MESSAGE_2)
+
+    assert len(soft_asserts.failures) == 1
+
+    with pytest.raises(AssertionError) as e:
+        soft_asserts.assert_all()
+
+    assert e.value.args[0].count(ERROR_MESSAGE_1) == 1
+    assert e.value.args[0].count(f'(Count: 3) {ERROR_MESSAGE_1}') == 1
+
+
+def test_print_duplicate_errors_value_no_duplicated_errors_code_source_and_error(before_test):
+    soft_asserts.print_duplicate_errors = \
+        DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE_AND_ERROR
+
+    __soft_assert_true(False, ERROR_MESSAGE_1)
+    __soft_assert_true(False, ERROR_MESSAGE_1)
+    __soft_assert_true(False, ERROR_MESSAGE_2)
+
+    assert len(soft_asserts.failures) == 2
+
+    with pytest.raises(AssertionError) as e:
+        soft_asserts.assert_all()
+
+    assert e.value.args[0].count(ERROR_MESSAGE_1) == 1
+    assert e.value.args[0].count(ERROR_MESSAGE_2) == 1
+    assert e.value.args[0].count(f'(Count: 2) {ERROR_MESSAGE_1}') == 1
+    assert e.value.args[0].count(f'(Count: 1) {ERROR_MESSAGE_2}') == 1
+
+
+def __soft_assert_true(condition: bool, message: str = ''):
+    soft_asserts.assert_true(condition, message)
 
 
 def __verify_assert_all_raised_exception():

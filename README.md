@@ -116,7 +116,7 @@ This can be done by adding logger or by adding a print method.<br/>
 
 #### Error format
 
-`message [file_path: line_number] code_line`
+`(Count: ERROR_AMOUNT) message [file_path: line_number] code_line`
 
 #### logger example:
 
@@ -166,5 +166,28 @@ def test_assert_true_fail():
     soft_asserts.assert_equal(i, j, f'{i} is different from {j}')
     soft_asserts.assert_all()
 ```
+
+#### Duplicate error messages
+In case of multiple asserts with the same error message, a count of how many times the error message was printed will be shown.<br/>
+This is useful to avoid printing the same error message multiple times.<br/>
+
+* Supported duplicated error messages options:
+  - `DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE`: Do not print duplicate error messages, that the duplication is based on the same code source (file path and line number).
+  - `DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE_AND_ERROR`: Do not print duplicate error messages, that the duplication is based on the same code source (file path and line number) and the same error message.
+
+Example:
+
+```python
+from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts, DuplicatedErrorsEnum
+
+
+soft_asserts = SoftAsserts()
+soft_asserts.print_duplicate_errors = DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE_AND_ERROR
+soft_asserts.assert_equal(1, 2, 'Error message')
+soft_asserts.assert_equal(1, 2, 'Error message')
+soft_asserts.assert_all()
+```
+
+
 
 Wiki: https://github.com/etuzon/python-nrt-pytest-soft-asserts/wiki

@@ -1,5 +1,9 @@
 # nrt-pytest-soft-asserts
 
+## Version 1.2.0
+### New features:
+Support with duplicated errors validation options.
+
 ## Version 1.1.3
 Support Python 3.13.
 
