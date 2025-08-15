@@ -1,8 +1,22 @@
 import linecache
 import os
 from dataclasses import dataclass
+from enum import Enum
 from typing import Callable, Optional, List
 import inspect
+
+
+class DuplicatedErrorsEnum(Enum):
+    NO_DUPLICATED_ERRORS_CODE_SOURCE = 1
+    NO_DUPLICATED_ERRORS_CODE_SOURCE_AND_ERROR = 2
+
+    @property
+    def is_no_duplicated_errors_code_source(self) -> bool:
+        return self == DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE
+
+    @property
+    def is_no_duplicated_errors_code_source_and_error(self) -> bool:
+        return self == DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE_AND_ERROR
 
 
 @dataclass
@@ -12,10 +26,11 @@ class Failure:
     file_path: str
     code_line: str
     line_number: int
+    count: int = 1
 
     def __str__(self):
-        return f'{self.error} ' \
-               f'[{self.file_path}: {self.line_number}] {self.code_line}'
+        return f'(Count: {self.count}) {self.error}'\
+               f' [{self.file_path}: {self.line_number}] {self.code_line}'
 
 
 class SoftAsserts:
@@ -30,10 +45,12 @@ class SoftAsserts:
     __print_method: Optional[Callable] = None
     __current_step: Optional[str] = None
     __failure_steps: List[str] = []
+    __print_duplicate_errors: DuplicatedErrorsEnum
 
     def __init__(self):
         self.__validate_params()
         self.__failures = []
+        self.__print_duplicate_errors = DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE
 
     def set_step(self, step: str):
         self.__current_step = step
@@ -204,9 +221,14 @@ class SoftAsserts:
             self.__failures = []
 
             self.failure_steps = (
-                list(dict.fromkeys(
-                        [failure.step for failure in failures
-                         if failure.step is not None])))
+                list(
+                    dict.fromkeys(
+                        [
+                            failure.step for failure in failures if failure.step is not None
+                        ]
+                    )
+                )
+            )
 
             errors = '\n'.join([str(failure) for failure in failures])
 
@@ -230,6 +252,14 @@ class SoftAsserts:
     def failure_steps(self, value):
         self.__failure_steps = value
 
+    @property
+    def print_duplicate_errors(self) -> DuplicatedErrorsEnum:
+        return self.__print_duplicate_errors
+
+    @print_duplicate_errors.setter
+    def print_duplicate_errors(self, value: DuplicatedErrorsEnum):
+        self.__print_duplicate_errors = value
+
     def __append_to_failures(self, error):
 
         file_path, code_line, line_number = \
@@ -241,11 +271,59 @@ class SoftAsserts:
                 step=self.__current_step,
                 file_path=file_path,
                 code_line=code_line,
-                line_number=line_number)
+                line_number=line_number
+            )
 
-        self.__failures.append(failure)
+        if self.__is_append_failure(failure):
+            self.__failures.append(failure)
+            self.__print_error_to_log(failure)
 
-        self.__print_error_to_log(failure)
+    def __is_append_failure(self, failure: Failure) -> bool:
+
+        if self.print_duplicate_errors.is_no_duplicated_errors_code_source:
+            return not self.__is_code_source_failure_in_failures(failure)
+
+        if self.print_duplicate_errors.is_no_duplicated_errors_code_source_and_error:
+            return not self.__is_code_source_and_error_failure_in_failures(failure)
+
+        raise ValueError(
+            f'Unknown duplicated errors validation: {self.print_duplicate_errors}')
+
+    def __is_code_source_failure_in_failures(self, failure: Failure) -> bool:
+        for f in self.__failures:
+            if f.file_path == failure.file_path and f.line_number == failure.line_number \
+                    and f.code_line == failure.code_line:
+
+                f.count += 1
+                return True
+
+        return False
+
+    def __is_code_source_and_error_failure_in_failures(self, failure: Failure) -> bool:
+        for f in self.__failures:
+            if f.error == failure.error and f.file_path == failure.file_path \
+                    and f.line_number == failure.line_number and f.code_line == failure.code_line:
+
+                f.count += 1
+                return True
+
+        return False
+
+    @classmethod
+    def set_logger(cls, logger):
+        cls.__logger = logger
+
+    @classmethod
+    def unset_logger(cls):
+        cls.__logger = None
+
+    @classmethod
+    def set_print_method(cls, print_method: Callable):
+        cls.__print_method = print_method
+
+    @classmethod
+    def unset_print_method(cls):
+        cls.__print_method = None
 
     @classmethod
     def __print_error_to_log(cls, failure: Failure):
@@ -266,22 +344,6 @@ class SoftAsserts:
     @classmethod
     def __is_almost_equal(cls, first, second, delta):
         return abs(first - second) <= delta
-
-    @classmethod
-    def set_logger(cls, logger):
-        cls.__logger = logger
-
-    @classmethod
-    def unset_logger(cls):
-        cls.__logger = None
-
-    @classmethod
-    def set_print_method(cls, print_method: Callable):
-        cls.__print_method = print_method
-
-    @classmethod
-    def unset_print_method(cls):
-        cls.__print_method = None
 
     @classmethod
     def __get_failure_file_path_and_line_code_and_line_number(cls):
