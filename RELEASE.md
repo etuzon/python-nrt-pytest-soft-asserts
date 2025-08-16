@@ -1,5 +1,8 @@
 # nrt-pytest-soft-asserts
 
+## Version 1.2.1
+Fix assert counts message.
+
 ## Version 1.2.0
 ### New features:
 Support with duplicated errors validation options.

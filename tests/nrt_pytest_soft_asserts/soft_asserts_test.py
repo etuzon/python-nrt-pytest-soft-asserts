@@ -263,7 +263,7 @@ def test_assert_raised_with_fail(before_test):
 def test_fail_with_print_message(before_test):
     SoftAsserts.set_print_method(__print)
     soft_asserts.assert_true(False, ERROR_MESSAGE_1)
-    assert print_message.startswith(f'(Count: 1) {ERROR_MESSAGE_1}')
+    assert print_message.startswith(f'[1] {ERROR_MESSAGE_1}')
     __verify_assert_all_raised_exception()
 
 
@@ -373,7 +373,7 @@ def test_print_duplicate_errors_value_no_duplicated_errors_code_source(before_te
         soft_asserts.assert_all()
 
     assert e.value.args[0].count(ERROR_MESSAGE_1) == 1
-    assert e.value.args[0].count(f'(Count: 3) {ERROR_MESSAGE_1}') == 1
+    assert e.value.args[0].count(f'[3] {ERROR_MESSAGE_1}') == 1
 
 
 def test_print_duplicate_errors_value_no_duplicated_errors_code_source_and_error(before_test):
@@ -391,8 +391,8 @@ def test_print_duplicate_errors_value_no_duplicated_errors_code_source_and_error
 
     assert e.value.args[0].count(ERROR_MESSAGE_1) == 1
     assert e.value.args[0].count(ERROR_MESSAGE_2) == 1
-    assert e.value.args[0].count(f'(Count: 2) {ERROR_MESSAGE_1}') == 1
-    assert e.value.args[0].count(f'(Count: 1) {ERROR_MESSAGE_2}') == 1
+    assert e.value.args[0].count(f'[2] {ERROR_MESSAGE_1}') == 1
+    assert e.value.args[0].count(f'[1] {ERROR_MESSAGE_2}') == 1
 
 
 def __soft_assert_true(condition: bool, message: str = ''):
