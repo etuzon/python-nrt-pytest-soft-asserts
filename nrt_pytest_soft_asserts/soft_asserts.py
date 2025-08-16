@@ -29,7 +29,7 @@ class Failure:
     count: int = 1
 
     def __str__(self):
-        return f'(Count: {self.count}) {self.error}'\
+        return f'[{self.count}] {self.error}'\
                f' [{self.file_path}: {self.line_number}] {self.code_line}'
 
 
