@@ -1,7 +1,7 @@
 import os
 from setuptools import setup
-
 import nrt_pytest_soft_asserts
+
 
 PATH = os.path.dirname(__file__)
 
@@ -32,7 +32,6 @@ setup(
         'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3.12',
         'Programming Language :: Python :: 3.13',
-        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],
     install_requires=[requirements],
