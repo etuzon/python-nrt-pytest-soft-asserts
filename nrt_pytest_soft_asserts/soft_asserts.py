@@ -286,8 +286,7 @@ class SoftAsserts:
         if self.print_duplicate_errors.is_no_duplicated_errors_code_source_and_error:
             return not self.__is_code_source_and_error_failure_in_failures(failure)
 
-        raise ValueError(
-            f'Unknown duplicated errors validation: {self.print_duplicate_errors}')
+        raise ValueError(f'Unknown duplicated errors validation: {self.print_duplicate_errors}')
 
     def __is_code_source_failure_in_failures(self, failure: Failure) -> bool:
         for f in self.__failures:

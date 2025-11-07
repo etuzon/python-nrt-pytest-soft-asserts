@@ -1,48 +1,62 @@
 # nrt-pytest-soft-asserts
 
-## Version 1.2.1
+## Version History
+
+### Version 1.2.3
+
+Support Python 3.14.
+
+### Version 1.2.2
+
+Fix License.
+
+### Version 1.2.1
+
 Fix assert counts message.
 
-## Version 1.2.0
-### New features:
+### Version 1.2.0
+
+#### New features:
+
 Support with duplicated errors validation options.
 
-## Version 1.1.3
+### Version 1.1.3
+
 Support Python 3.13.
 
-## Version 1.1.2
+### Version 1.1.2
 
 Fix dependency issue.
 
-## Version 1.1.1
+### Version 1.1.1
 
 Fix bug in README.md.
 
-## Version 1.1.0
+### Version 1.1.0
 
-### New features:
+#### New features:
 
 Error message is in `message [file_path: line_number] code_line` format.
 
-## Version 1.0.9
+### Version 1.0.9
 
 Support in latest version of pytest.
 
-## Version 1.0.8
+### Version 1.0.8
 
 GitHub workflow updates.
 
-## Version 1.0.7
+### Version 1.0.7
 
 Fix bug in Python 3.8 support.
 
-## Version 1.0.6
+### Version 1.0.6
 
 Support Python 3.8.
 
-## Version 1.0.5
+### Version 1.0.5
 
-### New Features
+#### New Features
 
 Assert methods return True if assertion passes, False if assertion fails.
 

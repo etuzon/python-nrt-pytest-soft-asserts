@@ -1,18 +1,24 @@
 [project]
 
 name='nrt-pytest-soft-asserts'
-version='1.2.1'
+
+version='1.2.3'
+
 authors=[
 { name='Eyal Tuzon', email='eyal.tuzon.dev@gmail.com' },
 ]
+
 description='Soft asserts for pytest'
+
 keywords=[
 'python', 'python3', 'python-3', 'nrt', 'pytest',
 'soft', 'assert', 'asserts', 'assertion' ,'assertions', 'soft-assert',
 'soft-asserts', 'soft-assertion', 'soft-assertions', 'nrt-pytest-soft-asserts'
 ]
+
 readme='README.md'
 requires-python='>=3.8'
+
 classifiers=[
 'Programming Language :: Python :: 3',
 'Programming Language :: Python :: 3.8',
@@ -21,10 +27,13 @@ classifiers=[
 'Programming Language :: Python :: 3.11',
 'Programming Language :: Python :: 3.12',
 'Programming Language :: Python :: 3.13',
+'Programming Language :: Python :: 3.14',
 'Operating System :: OS Independent',
 ]
 
 dynamic=['dependencies']
+
+license-files=['LICENSE']
 
 [project.urls]
 
