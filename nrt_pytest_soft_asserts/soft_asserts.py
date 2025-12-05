@@ -7,6 +7,7 @@ import inspect
 
 
 class DuplicatedErrorsEnum(Enum):
+
     NO_DUPLICATED_ERRORS_CODE_SOURCE = 1
     NO_DUPLICATED_ERRORS_CODE_SOURCE_AND_ERROR = 2
 
@@ -171,6 +172,7 @@ class SoftAsserts:
         return True
 
     def assert_raises(self, exception, method: Callable, *args, **kwargs) -> bool:
+
         try:
             method(*args, **kwargs)
             error = f'{exception} not raised'
@@ -185,7 +187,9 @@ class SoftAsserts:
         return True
 
     def assert_raised_with(self, exception, message=None):
+
         class AssertRaises:
+
             __exception = None
             __append_to_failures: Callable = None
 
@@ -197,6 +201,7 @@ class SoftAsserts:
                 return self
 
             def __exit__(self, exc_type, exc_value, traceback):
+
                 if exc_type is None:
                     error = message or f'{self.__exception} not raised'
                     self.__append_to_failures(error)
@@ -259,6 +264,12 @@ class SoftAsserts:
     @print_duplicate_errors.setter
     def print_duplicate_errors(self, value: DuplicatedErrorsEnum):
         self.__print_duplicate_errors = value
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.assert_all()
 
     def __append_to_failures(self, error):
 
@@ -346,6 +357,7 @@ class SoftAsserts:
 
     @classmethod
     def __get_failure_file_path_and_line_code_and_line_number(cls):
+
         frame = inspect.currentframe()
         frame = frame.f_back.f_back.f_back
         file_path = os.path.relpath(frame.f_code.co_filename)

@@ -16,7 +16,7 @@ def __raise_value_error():
     raise ValueError('ValueError raised')
 
 
-def test_01_assert_true():
+def test_assert_true():
     i = 1
     j = 2
     result = soft_asserts.assert_true(i + j == 3)
@@ -24,7 +24,7 @@ def test_01_assert_true():
     soft_asserts.assert_all()
 
 
-def test_02_assert_true_fail():
+def test_assert_true_fail():
     i = 1
     j = 2
     # logger.error() will print messages to console for each assert that fails
@@ -35,7 +35,7 @@ def test_02_assert_true_fail():
     soft_asserts.assert_all()
 
 
-def test_03_assert_with_steps():
+def test_assert_with_steps():
     soft_asserts.set_step(STEP_1)
     soft_asserts.assert_true(False)
     logger.info('print info')
@@ -51,23 +51,23 @@ def test_03_assert_with_steps():
 
 
 @pytest.mark.soft_asserts(soft_asserts=soft_asserts, skip_steps=[STEP_1])
-def test_04_skip_if_step_1_fail():
+def test_skip_if_step_1_fail():
     logger.info('print info')
 
 
 @pytest.mark.soft_asserts(soft_asserts=soft_asserts, skip_steps=[STEP_2])
-def test_05_skip_if_step_2_fail():
+def test_skip_if_step_2_fail():
     logger.info('print info')
 
 
-def test_06_assert_raises_with():
+def test_assert_raises_with():
     with soft_asserts.assert_raised_with(TypeError):
         _ = sum([1, '2'])
 
     soft_asserts.assert_all()
 
 
-def test_06_assert_raises_with_fail():
+def test_assert_raises_with_fail():
     with soft_asserts.assert_raised_with(ValueError):
         # sun will raise TypeError
         _ = sum([1, '2'])
@@ -75,6 +75,18 @@ def test_06_assert_raises_with_fail():
     soft_asserts.assert_all()
 
 
-def test_07_assert_raises():
+def test_assert_raises():
     soft_asserts.assert_raises(ValueError, __raise_value_error)
     soft_asserts.assert_all()
+
+
+def test_with_statement_1():
+    with soft_asserts:
+        soft_asserts.assert_true(False)
+        soft_asserts.assert_equal(1, 2)
+
+
+def test_with_statement_2():
+    with SoftAsserts() as sa:
+        sa.assert_true(False)
+        sa.assert_equal(1, 2)

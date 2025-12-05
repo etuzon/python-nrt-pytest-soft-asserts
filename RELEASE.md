@@ -2,6 +2,14 @@
 
 ## Version History
 
+### Version 1.3.0
+
+Support 'with' statement.
+
+### Version 1.2.4
+
+Fix pyproject.toml.
+
 ### Version 1.2.3
 
 Support Python 3.14.

@@ -10,7 +10,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/etuzon/python-nrt-pytest-soft-asserts?style=plastic)
 [![DeepSource](https://app.deepsource.com/gh/etuzon/python-nrt-pytest-soft-asserts.svg/?label=active+issues&token=d3XBT3-sw5yOtGTGWIJMpmT_)](https://app.deepsource.com/gh/etuzon/python-nrt-pytest-soft-asserts/?ref=repository-badge)
 
-### Supported asserts:
+## Supported asserts
 
 | Assert                                                      | Description                                                                                   | Example                                                                                                         | Return                                              |
 |-------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
@@ -37,14 +37,43 @@ To verify the soft asserts in the middle of the test, call `soft_asserts.assert_
 <br/>
 assert_all() will raise _AssertionError_ if any of the asserts failed.<br/>
 
-#### Steps
+### With statement
+
+Soft asserts can be used in 'with' statement.<br/>
+<br/>
+#### Example 1
+
+```python
+from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts
+
+
+soft_asserts = SoftAsserts()
+
+def test_assert_with_statement():
+    with soft_asserts:
+        soft_asserts.assert_true(False, 'First assert failed')
+        soft_asserts.assert_equal(1, 2, 'Second assert failed')
+```
+
+#### Example 2
+
+```python
+from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts
+
+
+with SoftAsserts() as soft_asserts:
+    soft_asserts.assert_true(False, 'First assert failed')
+    soft_asserts.assert_equal(1, 2, 'Second assert failed')
+```
+
+### Steps
 
 Each testing section can be divided to steps.<br/>
 The meaning of this is that if one of the asserts in a step failed,<br/>
 then the step will be entered to list of failure steps and next test can be skipped<br/>
 if it is depended on the failed step.<br/> 
 
-Example:
+#### Example
 
 To make test be skipped if step failed, a custom marker should be created.
 
@@ -105,7 +134,7 @@ def test_skip_if_step_2_fail():
     soft_asserts.assert_true(True)
 ```
 
-#### Print error on each failed assert
+### Print error on each failed assert
 
 Each assertion failure can be printed.<br/>
 This can be done by adding logger or by adding a print method.<br/>
@@ -114,11 +143,11 @@ This can be done by adding logger or by adding a print method.<br/>
  - In case a print method will be added to soft asserts, then print_method(message) will be used.
  - logger and print method cannot be added together.
 
-#### Error format
+### Error format
 
 `(Count: ERROR_AMOUNT) message [file_path: line_number] code_line`
 
-#### logger example:
+#### logger example
 
 ```python
 import logging
@@ -143,7 +172,7 @@ def test_assert_true_fail():
     soft_asserts.assert_all()
 ```
 
-#### print method example:
+#### print method example
 
 ```python
 from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts
@@ -167,7 +196,7 @@ def test_assert_true_fail():
     soft_asserts.assert_all()
 ```
 
-#### Duplicate error messages
+### Duplicate error messages
 In case of multiple asserts with the same error message, a count of how many times the error message was printed will be shown.<br/>
 This is useful to avoid printing the same error message multiple times.<br/>
 
@@ -175,7 +204,7 @@ This is useful to avoid printing the same error message multiple times.<br/>
   - `DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE`: Do not print duplicate error messages, that the duplication is based on the same code source (file path and line number).
   - `DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE_AND_ERROR`: Do not print duplicate error messages, that the duplication is based on the same code source (file path and line number) and the same error message.
 
-Example:
+#### Example
 
 ```python
 from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts, DuplicatedErrorsEnum

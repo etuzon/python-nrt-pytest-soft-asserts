@@ -12,6 +12,7 @@ STEP_3 = 'step 3'
 
 STEPS = [STEP_2, STEP_3]
 
+
 soft_asserts = SoftAsserts()
 
 print_message = ''
@@ -19,6 +20,7 @@ print_message = ''
 
 @pytest.fixture
 def before_test():
+
     SoftAsserts.unset_logger()
     SoftAsserts.unset_print_method()
     # If it fails, then Missing assert_all in tests
@@ -123,6 +125,7 @@ def test_assert_raised_with(before_test):
 
 
 def test_assert_true_fail(before_test):
+
     assert not soft_asserts.assert_true(False)
     assert soft_asserts.assert_true(True)
     assert not soft_asserts.assert_true(False, ERROR_MESSAGE_1)
@@ -131,6 +134,7 @@ def test_assert_true_fail(before_test):
 
 
 def test_assert_false_fail(before_test):
+
     assert not soft_asserts.assert_false(True)
     assert soft_asserts.assert_false(False)
     assert not soft_asserts.assert_false(True, ERROR_MESSAGE_1)
@@ -139,6 +143,7 @@ def test_assert_false_fail(before_test):
 
 
 def test_assert_equal_fail(before_test):
+
     assert not soft_asserts.assert_equal(1, 2)
     assert soft_asserts.assert_equal(1, 1)
     assert not soft_asserts.assert_equal('1', '2')
@@ -148,6 +153,7 @@ def test_assert_equal_fail(before_test):
 
 
 def test_assert_not_equal_fail(before_test):
+
     assert not soft_asserts.assert_not_equal(1, 1)
     assert soft_asserts.assert_not_equal(1, 2)
     assert soft_asserts.assert_not_equal('1', '2')
@@ -157,6 +163,7 @@ def test_assert_not_equal_fail(before_test):
 
 
 def test_assert_is_fail(before_test):
+
     assert not soft_asserts.assert_is(1, 2)
     assert soft_asserts.assert_is(1, 1)
     assert not soft_asserts.assert_is('1', '2')
@@ -166,6 +173,7 @@ def test_assert_is_fail(before_test):
 
 
 def test_assert_is_not_fail(before_test):
+
     assert not soft_asserts.assert_is_not(1, 1)
     assert soft_asserts.assert_is_not(1, 2)
     assert soft_asserts.assert_is_not('2', '1')
@@ -175,6 +183,7 @@ def test_assert_is_not_fail(before_test):
 
 
 def test_assert_is_none_fail(before_test):
+
     assert not soft_asserts.assert_is_none(1)
     assert soft_asserts.assert_is_none(None)
     assert not soft_asserts.assert_is_none(1, ERROR_MESSAGE_1)
@@ -183,6 +192,7 @@ def test_assert_is_none_fail(before_test):
 
 
 def test_assert_is_not_none_fail(before_test):
+
     assert not soft_asserts.assert_is_not_none(None)
     assert soft_asserts.assert_is_not_none(1)
     assert not soft_asserts.assert_is_not_none(None, ERROR_MESSAGE_1)
@@ -191,6 +201,7 @@ def test_assert_is_not_none_fail(before_test):
 
 
 def test_assert_in_fail(before_test):
+
     assert not soft_asserts.assert_in(1, [2, 3, 4])
     assert soft_asserts.assert_in(1, [1, 2, 3])
     assert not soft_asserts.assert_in('1', ['2', '3', '4'])
@@ -200,6 +211,7 @@ def test_assert_in_fail(before_test):
 
 
 def test_assert_not_in_fail(before_test):
+
     assert not soft_asserts.assert_not_in(1, [1, 2, 3])
     assert soft_asserts.assert_not_in(1, [2, 3, 4])
     assert not soft_asserts.assert_not_in('1', ['1', '2', '3'])
@@ -209,6 +221,7 @@ def test_assert_not_in_fail(before_test):
 
 
 def test_assert_is_instance_fail(before_test):
+
     assert not soft_asserts.assert_is_instance(1, str)
     assert soft_asserts.assert_is_instance(1, int)
     assert soft_asserts.assert_is_instance('1', str)
@@ -218,6 +231,7 @@ def test_assert_is_instance_fail(before_test):
 
 
 def test_assert_not_is_instance_fail(before_test):
+
     assert not soft_asserts.assert_not_is_instance(1, int)
     assert soft_asserts.assert_not_is_instance(1, str)
     assert not soft_asserts.assert_not_is_instance('1', str)
@@ -227,6 +241,7 @@ def test_assert_not_is_instance_fail(before_test):
 
 
 def test_assert_almost_equal_fail(before_test):
+
     assert not soft_asserts.assert_almost_equal(1.001, 1.0002, 0.00001)
     assert soft_asserts.assert_almost_equal(1.001, 1.0002, 0.002)
     assert len(soft_asserts.failures) == 1
@@ -234,6 +249,7 @@ def test_assert_almost_equal_fail(before_test):
 
 
 def test_assert_not_almost_equal_fail(before_test):
+
     assert not soft_asserts.assert_not_almost_equal(1.0001, 1.0002, 0.001)
     assert not soft_asserts.assert_not_almost_equal(1.0001, 1.0002, 0.002)
     assert len(soft_asserts.failures) == 2
@@ -241,6 +257,7 @@ def test_assert_not_almost_equal_fail(before_test):
 
 
 def test_assert_raises_fail(before_test):
+
     assert not soft_asserts.assert_raises(NotImplementedError, __raise_value_error)
     assert not soft_asserts.assert_raises(
         NotImplementedError, __raise_value_error, ERROR_MESSAGE_1)
@@ -250,6 +267,7 @@ def test_assert_raises_fail(before_test):
 
 
 def test_assert_raised_with_fail(before_test):
+
     with soft_asserts.assert_raised_with(ValueError):
         _ = 1
 
@@ -261,6 +279,7 @@ def test_assert_raised_with_fail(before_test):
 
 
 def test_fail_with_print_message(before_test):
+
     SoftAsserts.set_print_method(__print)
     soft_asserts.assert_true(False, ERROR_MESSAGE_1)
     assert print_message.startswith(f'[1] {ERROR_MESSAGE_1}')
@@ -268,6 +287,7 @@ def test_fail_with_print_message(before_test):
 
 
 def test_fail_with_logger(before_test):
+
     logger = logging.getLogger('test')
     SoftAsserts.set_logger(logger)
     soft_asserts.assert_true(False, ERROR_MESSAGE_1)
@@ -275,6 +295,7 @@ def test_fail_with_logger(before_test):
 
 
 def test_fail_with_logger_and_print_message_negative(before_test):
+
     logger = logging.getLogger('test')
     SoftAsserts.set_logger(logger)
     SoftAsserts.set_print_method(__print)
@@ -290,6 +311,7 @@ def test_fail_with_logger_and_print_message_negative(before_test):
 
 
 def test_steps(before_test):
+
     soft_asserts.set_step(STEP_1)
     soft_asserts.assert_true(True, ERROR_MESSAGE_1)
     soft_asserts.set_step(STEP_2)
@@ -313,6 +335,7 @@ def test_steps(before_test):
 
 
 def test_unset_step(before_test):
+
     soft_asserts.set_step(STEP_1)
     soft_asserts.unset_step()
 
@@ -330,6 +353,7 @@ def test_unset_step(before_test):
 
 
 def test_step_not_exist_after_assert_all(before_test):
+
     soft_asserts.set_step(STEP_1)
     soft_asserts.assert_true(False, ERROR_MESSAGE_1)
 
@@ -348,6 +372,7 @@ def test_step_not_exist_after_assert_all(before_test):
 
 
 def test_step_not_in_failure_steps_before_assert_all(before_test):
+
     soft_asserts.set_step(STEP_1)
     soft_asserts.assert_true(False, ERROR_MESSAGE_1)
 
@@ -360,6 +385,7 @@ def test_step_not_in_failure_steps_before_assert_all(before_test):
 
 
 def test_print_duplicate_errors_value_no_duplicated_errors_code_source(before_test):
+
     soft_asserts.print_duplicate_errors = \
         DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE
 
@@ -377,6 +403,7 @@ def test_print_duplicate_errors_value_no_duplicated_errors_code_source(before_te
 
 
 def test_print_duplicate_errors_value_no_duplicated_errors_code_source_and_error(before_test):
+
     soft_asserts.print_duplicate_errors = \
         DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE_AND_ERROR
 
@@ -393,6 +420,21 @@ def test_print_duplicate_errors_value_no_duplicated_errors_code_source_and_error
     assert e.value.args[0].count(ERROR_MESSAGE_2) == 1
     assert e.value.args[0].count(f'[2] {ERROR_MESSAGE_1}') == 1
     assert e.value.args[0].count(f'[1] {ERROR_MESSAGE_2}') == 1
+
+
+def test_with_statement():
+
+    with pytest.raises(AssertionError) as e:
+        with soft_asserts:
+            __soft_assert_true(False, ERROR_MESSAGE_1)
+            __soft_assert_true(True)
+            assert len(soft_asserts.failures) == 1
+
+    assert not len(soft_asserts.failures)
+
+    assert e.value.args[0].count(ERROR_MESSAGE_1) == 1
+
+    soft_asserts.assert_all()
 
 
 def __soft_assert_true(condition: bool, message: str = ''):
