@@ -12,28 +12,29 @@
 
 ## Supported asserts
 
-| Assert                                                      | Description                                                                                   | Example                                                                                                         | Return                                              |
-|-------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
-| assert_true(condition, message=None)                        | Verify that condition is True.                                                                | soft_asserts.assert_true(a == b)                                                                                | True if assertion passes, False if assertion fails. |
-| assert_false(condition, message=None)                       | Verify that condition is False.                                                               | soft_asserts.assert_false(a == b)                                                                               | True if assertion passes, False if assertion fails. |
-| assert_equal(first, second, message=None)                   | Verify that first is equal to second.                                                         | soft_asserts.assert_equal(a, b)                                                                                 | True if assertion passes, False if assertion fails. |
-| assert_not_equal(first, second, message=None)               | Verify that first is not equal to second.                                                     | soft_asserts.assert_not_equal(a, b)                                                                             | True if assertion passes, False if assertion fails. |
-| assert_is(first, second, message=None)                      | Verify that first and second are the same object.                                             | soft_asserts.assert_is(a, b)                                                                                    | True if assertion passes, False if assertion fails. |
-| assert_is_not(first, second, message=None)                  | Verify that first and second are not the same object.                                         | soft_asserts.assert_is_not(a, b)                                                                                | True if assertion passes, False if assertion fails. |
-| assert_is_none(obj, message=None)                           | Verify that obj is None.                                                                      | soft_asserts.assert_is_none(a)                                                                                  | True if assertion passes, False if assertion fails. |
-| assert_is_not_none(obj, message=None)                       | Verify that obj is not None.                                                                  | soft_asserts.assert_is_not_none(a)                                                                              | True if assertion passes, False if assertion fails. |
-| assert_in(obj, container, message=None)                     | Verify that obj is in container.                                                              | soft_asserts.assert_in(a, [a, b, c])                                                                            | True if assertion passes, False if assertion fails. |
-| assert_not_in(obj, container, message=None)                 | Verify that obj is not in container.                                                          | soft_asserts.assert_not_in(a, [b, c])                                                                           | True if assertion passes, False if assertion fails. |
-| assert_is_instance(obj, cls, message=None)                  | Verify that obj is instance of cls.                                                           | soft_asserts.assert_is_instance(a, A)                                                                           | True if assertion passes, False if assertion fails. |
-| assert_is_not_instance(obj, cls, message=None)              | Verify that obj is not instance of cls.                                                       | soft_asserts.assert_is_not_instance(a, B)                                                                       | True if assertion passes, False if assertion fails. |
-| assert_almost_equal(first, second, delta, message=None)     | Verify that first is almost equal to second,<br/>and the different is equal or less to delta. | soft_asserts.assert_almost_equal(1.001, 1.002, 0.1)                                                             | True if assertion passes, False if assertion fails. |
-| assert_not_almost_equal(first, second, delta, message=None) | Verify that first is not almost equal to second,<br/>and the different is more than delta.    | soft_asserts.assert_not_almost_equal(1.001, 1.002, 0.00001)                                                     | True if assertion passes, False if assertion fails. |
-| assert_raises(exception, method: Callable, *args, **kwargs) | Verify that method execution raise exception.                                                 | soft_asserts.assert_raises(TypeError, sum, 'a', 2)                                                              | True if assertion passes, False if assertion fails. |
-| assert_raises_with(exception, message=None)                 | Verify that execution in 'with' block raise exception.                                        | with soft_asserts.assert_raised_with(ValueError):<br/>&nbsp;&nbsp;&nbsp;&nbsp;raise ValueError(ERROR_MESSAGE_1) |                                                     |
+| Assert                                                                       | Description                                                                                   | Example                                                                                                         | Return                                              |
+|------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
+| assert_true(condition, message=None, on_failure=None)                        | Verify that condition is True.                                                                | soft_asserts.assert_true(a == b)                                                                                | True if assertion passes, False if assertion fails. |
+| assert_false(condition, message=None, on_failure=None)                       | Verify that condition is False.                                                               | soft_asserts.assert_false(a == b)                                                                               | True if assertion passes, False if assertion fails. |
+| assert_equal(first, second, message=None, on_failure=None)                   | Verify that first is equal to second.                                                         | soft_asserts.assert_equal(a, b)                                                                                 | True if assertion passes, False if assertion fails. |
+| assert_not_equal(first, second, message=None, on_failure=None)               | Verify that first is not equal to second.                                                     | soft_asserts.assert_not_equal(a, b)                                                                             | True if assertion passes, False if assertion fails. |
+| assert_is(first, second, message=None, on_failure=None)                      | Verify that first and second are the same object.                                             | soft_asserts.assert_is(a, b)                                                                                    | True if assertion passes, False if assertion fails. |
+| assert_is_not(first, second, message=None, on_failure=None)                  | Verify that first and second are not the same object.                                         | soft_asserts.assert_is_not(a, b)                                                                                | True if assertion passes, False if assertion fails. |
+| assert_is_none(obj, message=None, on_failure=None)                           | Verify that obj is None.                                                                      | soft_asserts.assert_is_none(a)                                                                                  | True if assertion passes, False if assertion fails. |
+| assert_is_not_none(obj, message=None, on_failure=None)                       | Verify that obj is not None.                                                                  | soft_asserts.assert_is_not_none(a)                                                                              | True if assertion passes, False if assertion fails. |
+| assert_in(obj, container, message=None, on_failure=None)                     | Verify that obj is in container.                                                              | soft_asserts.assert_in(a, [a, b, c])                                                                            | True if assertion passes, False if assertion fails. |
+| assert_not_in(obj, container, message=None, on_failure=None)                 | Verify that obj is not in container.                                                          | soft_asserts.assert_not_in(a, [b, c])                                                                           | True if assertion passes, False if assertion fails. |
+| assert_is_instance(obj, cls, message=None, on_failure=None)                  | Verify that obj is instance of cls.                                                           | soft_asserts.assert_is_instance(a, A)                                                                           | True if assertion passes, False if assertion fails. |
+| assert_is_not_instance(obj, cls, message=None, on_failure=None)              | Verify that obj is not instance of cls.                                                       | soft_asserts.assert_is_not_instance(a, B)                                                                       | True if assertion passes, False if assertion fails. |
+| assert_almost_equal(first, second, delta, message=None, on_failure=None)     | Verify that first is almost equal to second,<br/>and the different is equal or less to delta. | soft_asserts.assert_almost_equal(1.001, 1.002, 0.1)                                                             | True if assertion passes, False if assertion fails. |
+| assert_not_almost_equal(first, second, delta, message=None, on_failure=None) | Verify that first is not almost equal to second,<br/>and the different is more than delta.    | soft_asserts.assert_not_almost_equal(1.001, 1.002, 0.00001)                                                     | True if assertion passes, False if assertion fails. |
+| assert_raises(exception, method: Callable, *args, **kwargs)                  | Verify that method execution raise exception.                                                 | soft_asserts.assert_raises(TypeError, sum, 'a', 2)                                                              | True if assertion passes, False if assertion fails. |
+| assert_raises_with(exception, message=None, on_failure=None)                 | Verify that execution in 'with' block raise exception.                                        | with soft_asserts.assert_raised_with(ValueError):<br/>&nbsp;&nbsp;&nbsp;&nbsp;raise ValueError(ERROR_MESSAGE_1) |                                                     |
                                                                                                                                                         
 
 In the end of each test, the soft asserts will be verified and the test will be marked as failed if any of the asserts failed.<br/>
-To verify the soft asserts in the middle of the test, call `soft_asserts.assert_all()`.<br/>
+sort assert support on_failure callback function that will be called in case the assert fails.<br/>
+To verify the soft asserts in the middle of the test, call `sa.assert_all()`.<br/>
 <br/>
 assert_all() will raise _AssertionError_ if any of the asserts failed.<br/>
 
@@ -47,12 +48,16 @@ Soft asserts can be used in 'with' statement.<br/>
 from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts
 
 
-soft_asserts = SoftAsserts()
+sa = SoftAsserts()
+
+def print_on_failure():
+    print('Assertion failed!')
 
 def test_assert_with_statement():
-    with soft_asserts:
-        soft_asserts.assert_true(False, 'First assert failed')
-        soft_asserts.assert_equal(1, 2, 'Second assert failed')
+    with sa:
+        sa.assert_true(False, 'First assert failed')
+        sa.assert_equal(1, 2, 'Second assert failed')
+        sa.assert_equal(3, 4, 'Third assert failed', on_failure=print_on_failure)
 ```
 
 #### Example 2
@@ -61,9 +66,28 @@ def test_assert_with_statement():
 from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts
 
 
-with SoftAsserts() as soft_asserts:
-    soft_asserts.assert_true(False, 'First assert failed')
-    soft_asserts.assert_equal(1, 2, 'Second assert failed')
+with SoftAsserts() as sa:
+    sa.assert_true(False, 'First assert failed')
+    sa.assert_equal(1, 2, 'Second assert failed')
+```
+
+### soft_asserts decorator
+Soft asserts can be used as a decorator.<br/>
+The assert_all() method will be run in the decorator, so it is not needed to run in the test itself.<br/>
+
+#### Example
+
+```python
+import pytest
+from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts, soft_asserts
+
+
+sa = SoftAsserts()
+
+@soft_asserts(sa=sa)
+def test_assert_with_decorator():
+    sa.assert_true(False, 'First assert failed')
+    sa.assert_equal(1, 2, 'Second assert failed')
 ```
 
 ### Steps
@@ -92,11 +116,11 @@ def run_before_test(request):
     for marker in markers:
         if marker.name == 'soft_asserts':
             marker_params = marker.kwargs
-            soft_asserts = marker_params['soft_asserts']
+            sa = marker_params['sa']
             skip_steps = marker_params['skip_steps']
 
             for step in skip_steps:
-                if soft_asserts.is_step_in_failure_steps(step):
+                if sa.is_step_in_failure_steps(step):
                     pytest.skip(f'Skipped because [{step}] failed.')
 ```
 
@@ -104,34 +128,37 @@ def run_before_test(request):
 import pytest
 from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts
 
-soft_asserts = SoftAsserts()
 
 STEP_1 = 'step_1'
 STEP_2 = 'step_2'
 
+sa = SoftAsserts()
+
+
 def test_assert_with_steps():
-    soft_asserts.set_step(STEP_1)
+    sa.set_step(STEP_1)
     # result is False
-    result = soft_asserts.assert_true(False)
+    result = sa.assert_true(False)
     # print False
-    print(result)    
-    soft_asserts.set_step(STEP_2) 
-    soft_asserts.assert_true(False)
-    
+    print(result)
+    sa.set_step(STEP_2)
+    sa.assert_true(False)
+
     # From this code section steps will not be attached to failure asserts
-    soft_asserts.unset_step()
-    soft_asserts.assert_true(False)
-    
-    soft_asserts.assert_all()
+    sa.unset_step()
+    sa.assert_true(False)
+
+    sa.assert_all()
 
 
-@pytest.mark.soft_asserts(soft_asserts=soft_asserts, skip_steps=[STEP_1])
+@pytest.mark.soft_asserts(sa=sa, skip_steps=[STEP_1])
 def test_skip_if_step_1_fail():
-    soft_asserts.assert_true(True)
+    sa.assert_true(True)
 
-@pytest.mark.soft_asserts(soft_asserts=soft_asserts, skip_steps=[STEP_2])
+
+@pytest.mark.soft_asserts(sa=sa, skip_steps=[STEP_2])
 def test_skip_if_step_2_fail():
-    soft_asserts.assert_true(True)
+    sa.assert_true(True)
 ```
 
 ### Print error on each failed assert
@@ -156,20 +183,20 @@ from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts
 
 logger = logging.getLogger('test')
 
-soft_asserts = SoftAsserts()
+sa = SoftAsserts()
 
 # logger will be used to print message after each assert fail.
-soft_asserts.set_logger(logger)
+sa.set_logger(logger)
 
 
 def test_assert_true_fail():
     i = 1
     j = 2
     # logger.error() will print messages to console for each assert that fails
-    soft_asserts.assert_true(i + j == 5)
+    sa.assert_true(i + j == 5)
     # f'{i} is different from {j}' will be printed by logger.error() after assert will fail
-    soft_asserts.assert_equal(i, j, f'{i} is different from {j}')
-    soft_asserts.assert_all()
+    sa.assert_equal(i, j, f'{i} is different from {j}')
+    sa.assert_all()
 ```
 
 #### print method example
@@ -177,23 +204,25 @@ def test_assert_true_fail():
 ```python
 from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts
 
+
 def print_method(message):
     print(message)
 
-soft_asserts = SoftAsserts()
+    
+sa = SoftAsserts()
 
 # print_method will be used to print message after each assert fail.
-soft_asserts.set_print_method(print_method)
+sa.set_print_method(print_method)
 
 
 def test_assert_true_fail():
     i = 1
     j = 2
     # print_method will print messages to console for each assert that fails
-    soft_asserts.assert_true(i + j == 5)
+    sa.assert_true(i + j == 5)
     # f'{i} is different from {j}' will be printed by print_method after assert will fail
-    soft_asserts.assert_equal(i, j, f'{i} is different from {j}')
-    soft_asserts.assert_all()
+    sa.assert_equal(i, j, f'{i} is different from {j}')
+    sa.assert_all()
 ```
 
 ### Duplicate error messages
@@ -210,11 +239,11 @@ This is useful to avoid printing the same error message multiple times.<br/>
 from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts, DuplicatedErrorsEnum
 
 
-soft_asserts = SoftAsserts()
-soft_asserts.print_duplicate_errors = DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE_AND_ERROR
-soft_asserts.assert_equal(1, 2, 'Error message')
-soft_asserts.assert_equal(1, 2, 'Error message')
-soft_asserts.assert_all()
+sa = SoftAsserts()
+sa.print_duplicate_errors = DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE_AND_ERROR
+sa.assert_equal(1, 2, 'Error message')
+sa.assert_equal(1, 2, 'Error message')
+sa.assert_all()
 ```
 
 

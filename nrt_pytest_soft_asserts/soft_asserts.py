@@ -1,3 +1,4 @@
+import functools
 import linecache
 import os
 from dataclasses import dataclass
@@ -46,6 +47,7 @@ class SoftAsserts:
     __print_method: Optional[Callable] = None
     __current_step: Optional[str] = None
     __failure_steps: List[str] = []
+    __on_failure: Callable = None
     __print_duplicate_errors: DuplicatedErrorsEnum
 
     def __init__(self):
@@ -53,120 +55,145 @@ class SoftAsserts:
         self.__failures = []
         self.__print_duplicate_errors = DuplicatedErrorsEnum.NO_DUPLICATED_ERRORS_CODE_SOURCE
 
+    def set_on_failure(self, on_failure: Callable):
+        self.__on_failure = on_failure
+
     def set_step(self, step: str):
         self.__current_step = step
 
     def unset_step(self):
         self.__current_step = None
 
-    def assert_true(self, condition, message=None) -> bool:
+    def assert_true(self, condition, message=None, on_failure: Callable = None) -> bool:
         if not condition:
             error = message or 'Expected True, got False.'
             self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
             return False
 
         return True
 
-    def assert_false(self, condition, message=None) -> bool:
+    def assert_false(self, condition, message=None, on_failure: Callable = None) -> bool:
         if condition:
             error = message or 'Expected False, got True.'
             self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
             return False
 
         return True
 
-    def assert_equal(self, first, second, message=None) -> bool:
+    def assert_equal(self, first, second, message=None, on_failure: Callable = None) -> bool:
         if first != second:
             error = message or f'{first} != {second}'
             self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
             return False
 
         return True
 
-    def assert_not_equal(self, first, second, message=None) -> bool:
+    def assert_not_equal(
+            self, first, second, message=None, on_failure: Callable = None) -> bool:
+
         if first == second:
             error = message or f'{first} == {second}'
             self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
             return False
 
         return True
 
-    def assert_is(self, first, second, message=None) -> bool:
+    def assert_is(self, first, second, message=None, on_failure: Callable = None) -> bool:
         if first is not second:
             error = message or f'{first} is not {second}'
             self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
             return False
 
         return True
 
-    def assert_is_not(self, first, second, message=None) -> bool:
+    def assert_is_not(self, first, second, message=None, on_failure: Callable = None) -> bool:
         if first is second:
             error = message or f'{first} is {second}'
             self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
             return False
 
         return True
 
-    def assert_is_none(self, obj, message=None) -> bool:
+    def assert_is_none(self, obj, message=None, on_failure: Callable = None) -> bool:
         if obj is not None:
             error = message or f'{obj} is not None'
             self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
             return False
 
         return True
 
-    def assert_is_not_none(self, obj, message=None) -> bool:
+    def assert_is_not_none(self, obj, message=None, on_failure: Callable = None) -> bool:
         if obj is None:
             error = message or 'obj is None'
             self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
             return False
 
         return True
 
-    def assert_in(self, obj, container, message=None) -> bool:
+    def assert_in(self, obj, container, message=None, on_failure: Callable = None) -> bool:
         if obj not in container:
             error = message or f'{obj} not in {container}'
             self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
             return False
 
         return True
 
-    def assert_not_in(self, obj, container, message=None) -> bool:
+    def assert_not_in(self, obj, container, message=None, on_failure: Callable = None) -> bool:
         if obj in container:
             error = message or f'{obj} in {container}'
             self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
             return False
 
         return True
 
-    def assert_is_instance(self, obj, cls, message=None) -> bool:
+    def assert_is_instance(self, obj, cls, message=None, on_failure: Callable = None) -> bool:
         if not isinstance(obj, cls):
             error = message or f'{obj} is not instance of {cls}'
             self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
             return False
 
         return True
 
-    def assert_not_is_instance(self, obj, cls, message=None) -> bool:
+    def assert_not_is_instance(
+            self, obj, cls, message=None, on_failure: Callable = None) -> bool:
+
         if isinstance(obj, cls):
             error = message or f'{obj} is instance of {cls}'
             self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
             return False
 
         return True
 
-    def assert_almost_equal(self, first, second, delta, message=None) -> bool:
+    def assert_almost_equal(
+            self, first, second, delta, message=None, on_failure: Callable = None) -> bool:
+
         if not self.__is_almost_equal(first, second, delta):
             error = message or f'Assertion failed: {first} not almost equal to {second}'
             self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
             return False
 
         return True
 
-    def assert_not_almost_equal(self, first, second, delta, message=None) -> bool:
+    def assert_not_almost_equal(
+            self, first, second, delta, message=None, on_failure: Callable = None) -> bool:
+
         if self.__is_almost_equal(first, second, delta):
             error = message or f'Assertion failed: {first} almost equal to {second}'
             self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
             return False
 
         return True
@@ -186,7 +213,9 @@ class SoftAsserts:
 
         return True
 
-    def assert_raised_with(self, exception, message=None):
+    def assert_raised_with(self, exception, message=None, on_failure: Callable = None):
+
+        on_failure = on_failure if on_failure else self.__on_failure
 
         class AssertRaises:
 
@@ -205,11 +234,18 @@ class SoftAsserts:
                 if exc_type is None:
                     error = message or f'{self.__exception} not raised'
                     self.__append_to_failures(error)
+                    self.__execute_on_failure()
                 elif exc_type != self.__exception:
                     error = message or f'{exc_type} is not type of {self.__exception}'
                     self.__append_to_failures(error)
+                    self.__execute_on_failure()
 
                 return True
+
+            @classmethod
+            def __execute_on_failure(cls):
+                if callable(on_failure):
+                    on_failure()
 
         return AssertRaises(exception, self.__append_to_failures)
 
@@ -319,6 +355,13 @@ class SoftAsserts:
 
         return False
 
+    def __execute_on_failure(self, on_failure: Callable):
+
+        on_failure = on_failure if on_failure else self.__on_failure
+
+        if callable(on_failure):
+            on_failure()
+
     @classmethod
     def set_logger(cls, logger):
         cls.__logger = logger
@@ -365,3 +408,18 @@ class SoftAsserts:
         code_line = linecache.getline(file_path, line_number).strip()
 
         return file_path, code_line, line_number
+
+
+def soft_asserts(sa: SoftAsserts):
+
+    def soft_asserts_wrapper(func):
+
+        @functools.wraps(func)
+        def soft_asserts_func_wrapper(*args, **kwargs):
+            result = func(*args, **kwargs)
+            sa.assert_all()
+            return result
+
+        return soft_asserts_func_wrapper
+
+    return soft_asserts_wrapper
