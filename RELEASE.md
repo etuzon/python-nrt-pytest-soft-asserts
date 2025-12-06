@@ -2,6 +2,12 @@
 
 ## Version History
 
+### Version 1.4.0
+
+#### New features:
+- Support pytest fixture.
+- Support on_failure callback.
+
 ### Version 1.3.0
 
 Support 'with' statement.
