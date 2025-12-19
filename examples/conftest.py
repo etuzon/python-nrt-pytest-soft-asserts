@@ -12,5 +12,5 @@ def run_before_test(request):
             skip_steps = marker_params['skip_steps']
 
             for step in skip_steps:
-                if soft_asserts.is_step_in_failure_steps(step):
+                if soft_asserts.is_in_failure_steps(step):
                     pytest.skip(f'Skipped because [{step}] failed.')

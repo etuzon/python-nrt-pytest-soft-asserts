@@ -17,9 +17,9 @@ setup(
     author='Eyal Tuzon',
     author_email='eyal.tuzon.dev@gmail.com',
     description='Soft asserts for pytest',
-    keywords='python python3 python-3 nrt pytest soft assert asserts assertion'
+    keywords='python python3 python-3 pytest soft assert asserts assertion'
              ' assertions soft-assert soft-asserts soft-assertion soft-assertions'
-             ' nrt-pytest-soft-asserts',
+             'test test-framework unit-test',
     long_description_content_type='text/markdown',
     long_description=readme,
     url='https://github.com/etuzon/python-nrt-pytest-soft-asserts',
@@ -35,6 +35,12 @@ setup(
         'Programming Language :: Python :: 3.14',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
+        'Framework :: Pytest',
+        'Topic :: Software Development :: Testing',
+        'Topic :: Software Development :: Testing :: Unit',
+        'Topic :: Software Development :: Libraries',
+        'Topic :: Utilities',
+        'Development Status :: 5 - Production/Stable'
     ],
     install_requires=[requirements],
     data_files=[('', ['requirements.txt'])],

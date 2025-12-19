@@ -65,6 +65,7 @@ class SoftAsserts:
         self.__current_step = None
 
     def assert_true(self, condition, message=None, on_failure: Callable = None) -> bool:
+
         if not condition:
             error = message or 'Expected True, got False.'
             self.__append_to_failures(error)
@@ -74,6 +75,7 @@ class SoftAsserts:
         return True
 
     def assert_false(self, condition, message=None, on_failure: Callable = None) -> bool:
+
         if condition:
             error = message or 'Expected False, got True.'
             self.__append_to_failures(error)
@@ -83,6 +85,7 @@ class SoftAsserts:
         return True
 
     def assert_equal(self, first, second, message=None, on_failure: Callable = None) -> bool:
+
         if first != second:
             error = message or f'{first} != {second}'
             self.__append_to_failures(error)
@@ -91,8 +94,7 @@ class SoftAsserts:
 
         return True
 
-    def assert_not_equal(
-            self, first, second, message=None, on_failure: Callable = None) -> bool:
+    def assert_not_equal(self, first, second, message=None, on_failure: Callable = None) -> bool:
 
         if first == second:
             error = message or f'{first} == {second}'
@@ -102,7 +104,49 @@ class SoftAsserts:
 
         return True
 
+    def assert_greater(self, first, second, message=None, on_failure: Callable = None) -> bool:
+
+        if first <= second:
+            error = message or f'{first} is not greater than {second}'
+            self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
+            return False
+
+        return True
+
+    def assert_greater_equal(
+            self, first, second, message=None, on_failure: Callable = None) -> bool:
+
+        if first < second:
+            error = message or f'{first} is not greater than or equal to {second}'
+            self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
+            return False
+
+        return True
+
+    def assert_less(self, first, second, message=None, on_failure: Callable = None) -> bool:
+
+        if first >= second:
+            error = message or f'{first} is not less than {second}'
+            self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
+            return False
+
+        return True
+
+    def assert_less_equal(self, first, second, message=None, on_failure: Callable = None) -> bool:
+
+        if first > second:
+            error = message or f'{first} is not less than or equal to {second}'
+            self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
+            return False
+
+        return True
+
     def assert_is(self, first, second, message=None, on_failure: Callable = None) -> bool:
+
         if first is not second:
             error = message or f'{first} is not {second}'
             self.__append_to_failures(error)
@@ -112,6 +156,7 @@ class SoftAsserts:
         return True
 
     def assert_is_not(self, first, second, message=None, on_failure: Callable = None) -> bool:
+
         if first is second:
             error = message or f'{first} is {second}'
             self.__append_to_failures(error)
@@ -121,6 +166,7 @@ class SoftAsserts:
         return True
 
     def assert_is_none(self, obj, message=None, on_failure: Callable = None) -> bool:
+
         if obj is not None:
             error = message or f'{obj} is not None'
             self.__append_to_failures(error)
@@ -130,6 +176,7 @@ class SoftAsserts:
         return True
 
     def assert_is_not_none(self, obj, message=None, on_failure: Callable = None) -> bool:
+
         if obj is None:
             error = message or 'obj is None'
             self.__append_to_failures(error)
@@ -139,6 +186,7 @@ class SoftAsserts:
         return True
 
     def assert_in(self, obj, container, message=None, on_failure: Callable = None) -> bool:
+
         if obj not in container:
             error = message or f'{obj} not in {container}'
             self.__append_to_failures(error)
@@ -148,6 +196,7 @@ class SoftAsserts:
         return True
 
     def assert_not_in(self, obj, container, message=None, on_failure: Callable = None) -> bool:
+
         if obj in container:
             error = message or f'{obj} in {container}'
             self.__append_to_failures(error)
@@ -156,7 +205,19 @@ class SoftAsserts:
 
         return True
 
+    def assert_len_equal(
+            self, obj, expected_length, message=None, on_failure: Callable = None) -> bool:
+
+        if len(obj) != expected_length:
+            error = message or f'Length of {obj} is {len(obj)}, expected {expected_length}'
+            self.__append_to_failures(error)
+            self.__execute_on_failure(on_failure)
+            return False
+
+        return True
+
     def assert_is_instance(self, obj, cls, message=None, on_failure: Callable = None) -> bool:
+
         if not isinstance(obj, cls):
             error = message or f'{obj} is not instance of {cls}'
             self.__append_to_failures(error)
@@ -165,8 +226,7 @@ class SoftAsserts:
 
         return True
 
-    def assert_not_is_instance(
-            self, obj, cls, message=None, on_failure: Callable = None) -> bool:
+    def assert_not_is_instance(self, obj, cls, message=None, on_failure: Callable = None) -> bool:
 
         if isinstance(obj, cls):
             error = message or f'{obj} is instance of {cls}'
@@ -275,7 +335,7 @@ class SoftAsserts:
 
             raise AssertionError(f'\n{errors}')
 
-    def is_step_in_failure_steps(self, step: str) -> bool:
+    def is_in_failure_steps(self, step: str) -> bool:
         return step in self.failure_steps
 
     def init_failure_steps(self):

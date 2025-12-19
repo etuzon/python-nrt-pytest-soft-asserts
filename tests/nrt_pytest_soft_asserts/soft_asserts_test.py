@@ -72,6 +72,46 @@ def test_assert_not_equal():
     sa.assert_all()
 
 
+def test_assert_greater():
+    assert sa.assert_greater(2, 1)
+    assert sa.assert_greater(3, 2, ERROR_MESSAGE_1)
+    assert sa.assert_greater(5, 4, on_failure=__set_is_on_failure_true)
+
+    assert not is_on_failure
+
+    sa.assert_all()
+
+
+def test_assert_greater_equal():
+    assert sa.assert_greater_equal(2, 1)
+    assert sa.assert_greater_equal(2, 2, ERROR_MESSAGE_1)
+    assert sa.assert_greater_equal(3, 2, on_failure=__set_is_on_failure_true)
+
+    assert not is_on_failure
+
+    sa.assert_all()
+
+
+def test_assert_less():
+    assert sa.assert_less(1, 2)
+    assert sa.assert_less(2, 3, ERROR_MESSAGE_1)
+    assert sa.assert_less(4, 5, on_failure=__set_is_on_failure_true)
+
+    assert not is_on_failure
+
+    sa.assert_all()
+
+
+def test_assert_less_equal():
+    assert sa.assert_less_equal(1, 2)
+    assert sa.assert_less_equal(2, 2, ERROR_MESSAGE_1)
+    assert sa.assert_less_equal(3, 4, on_failure=__set_is_on_failure_true)
+
+    assert not is_on_failure
+
+    sa.assert_all()
+
+
 def test_assert_is():
     a = b = SoftAsserts()
 
@@ -131,6 +171,16 @@ def test_assert_not_in():
     assert sa.assert_not_in(1, [2, 3, 4])
     assert sa.assert_not_in('1', ['2', '3', '4'], ERROR_MESSAGE_1)
     assert sa.assert_not_in(5, [1, 2, 3], on_failure=__set_is_on_failure_true)
+
+    assert not is_on_failure
+
+    sa.assert_all()
+
+
+def test_assert_len_equal():
+    assert sa.assert_len_equal([1, 2, 3], 3)
+    assert sa.assert_len_equal('12345', 5, ERROR_MESSAGE_1)
+    assert sa.assert_len_equal((1, 2), 2, on_failure=__set_is_on_failure_true)
 
     assert not is_on_failure
 
@@ -260,6 +310,66 @@ def test_assert_not_equal_fail():
     __verify_assert_all_raised_exception()
 
 
+def test_assert_greater_fail():
+
+    assert not sa.assert_greater(1, 2)
+    assert not sa.assert_greater(1, 1)
+    assert sa.assert_greater(2, 1)
+    assert not sa.assert_greater(2, 3, ERROR_MESSAGE_1)
+    assert not sa.assert_greater(2, 3, on_failure=__set_is_on_failure_true)
+
+    assert len(sa.failures) == 4
+
+    assert is_on_failure
+
+    __verify_assert_all_raised_exception()
+
+
+def test_assert_greater_equal_fail():
+
+    assert not sa.assert_greater_equal(1, 2)
+    assert not sa.assert_greater_equal(2, 3)
+    assert sa.assert_greater_equal(2, 2)
+    assert not sa.assert_greater_equal(2, 3, ERROR_MESSAGE_1)
+    assert not sa.assert_greater_equal(2, 3, on_failure=__set_is_on_failure_true)
+
+    assert len(sa.failures) == 4
+
+    assert is_on_failure
+
+    __verify_assert_all_raised_exception()
+
+
+def test_assert_less_fail():
+
+    assert not sa.assert_less(2, 1)
+    assert not sa.assert_less(2, 2)
+    assert sa.assert_less(1, 2)
+    assert not sa.assert_less(3, 2, ERROR_MESSAGE_1)
+    assert not sa.assert_less(3, 2, on_failure=__set_is_on_failure_true)
+
+    assert len(sa.failures) == 4
+
+    assert is_on_failure
+
+    __verify_assert_all_raised_exception()
+
+
+def test_assert_less_equal_fail():
+
+    assert not sa.assert_less_equal(2, 1)
+    assert not sa.assert_less_equal(3, 2)
+    assert sa.assert_less_equal(2, 2)
+    assert not sa.assert_less_equal(3, 2, ERROR_MESSAGE_1)
+    assert not sa.assert_less_equal(3, 2, on_failure=__set_is_on_failure_true)
+
+    assert len(sa.failures) == 4
+
+    assert is_on_failure
+
+    __verify_assert_all_raised_exception()
+
+
 def test_assert_is_fail():
 
     assert not sa.assert_is(1, 2)
@@ -342,6 +452,21 @@ def test_assert_not_in_fail():
     assert not sa.assert_not_in('2', ['1', '2', '3'], on_failure=__set_is_on_failure_true)
 
     assert len(sa.failures) == 3
+
+    assert is_on_failure
+
+    __verify_assert_all_raised_exception()
+
+
+def test_assert_len_equal_fail():
+
+    assert not sa.assert_len_equal([1, 2, 3], 2)
+    assert sa.assert_len_equal([1, 2, 3], 3)
+    assert not sa.assert_len_equal('12345', 4)
+    assert not sa.assert_len_equal('12345', 4, ERROR_MESSAGE_1)
+    assert not sa.assert_len_equal((1, 2), 3, on_failure=__set_is_on_failure_true)
+
+    assert len(sa.failures) == 4
 
     assert is_on_failure
 
@@ -483,14 +608,14 @@ def test_steps():
     with pytest.raises(AssertionError):
         sa.assert_all()
 
-    assert not sa.is_step_in_failure_steps(STEP_1)
-    assert sa.is_step_in_failure_steps(STEP_2)
-    assert sa.is_step_in_failure_steps(STEP_3)
+    assert not sa.is_in_failure_steps(STEP_1)
+    assert sa.is_in_failure_steps(STEP_2)
+    assert sa.is_in_failure_steps(STEP_3)
 
     sa.init_failure_steps()
 
-    assert not sa.is_step_in_failure_steps(STEP_2)
-    assert not sa.is_step_in_failure_steps(STEP_3)
+    assert not sa.is_in_failure_steps(STEP_2)
+    assert not sa.is_in_failure_steps(STEP_3)
 
 
 def test_unset_step():
@@ -507,8 +632,8 @@ def test_unset_step():
     with pytest.raises(AssertionError):
         sa.assert_all()
 
-    assert not sa.is_step_in_failure_steps(STEP_1)
-    assert sa.is_step_in_failure_steps(STEP_2)
+    assert not sa.is_in_failure_steps(STEP_1)
+    assert sa.is_in_failure_steps(STEP_2)
 
 
 def test_step_not_exist_after_assert_all():
@@ -519,7 +644,7 @@ def test_step_not_exist_after_assert_all():
     with pytest.raises(AssertionError):
         sa.assert_all()
 
-    assert sa.is_step_in_failure_steps(STEP_1)
+    assert sa.is_in_failure_steps(STEP_1)
 
     sa.failure_steps = []
     sa.assert_true(False, ERROR_MESSAGE_1)
@@ -527,7 +652,7 @@ def test_step_not_exist_after_assert_all():
     with pytest.raises(AssertionError):
         sa.assert_all()
 
-    assert not sa.is_step_in_failure_steps(STEP_1)
+    assert not sa.is_in_failure_steps(STEP_1)
 
 
 def test_step_not_in_failure_steps_before_assert_all():
@@ -535,12 +660,12 @@ def test_step_not_in_failure_steps_before_assert_all():
     sa.set_step(STEP_1)
     sa.assert_true(False, ERROR_MESSAGE_1)
 
-    assert not sa.is_step_in_failure_steps(STEP_1)
+    assert not sa.is_in_failure_steps(STEP_1)
 
     with pytest.raises(AssertionError):
         sa.assert_all()
 
-    assert sa.is_step_in_failure_steps(STEP_1)
+    assert sa.is_in_failure_steps(STEP_1)
 
 
 def test_print_duplicate_errors_value_no_duplicated_errors_code_source():

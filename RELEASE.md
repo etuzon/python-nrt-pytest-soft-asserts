@@ -2,6 +2,11 @@
 
 ## Version History
 
+### Version 1.4.1
+
+- Add new assertion method: `assert_greater`, `assert_greater_equal`, `assert_less`, `assert_less_equal`.
+- Changed `is_step_in_failure_steps` name to `is_in_failure_steps`.
+
 ### Version 1.4.0
 
 #### New features:
@@ -10,7 +15,7 @@
 
 ### Version 1.3.0
 
-Support 'with' statement.
+Support `with` statement.
 
 ### Version 1.2.4
 
