@@ -23,11 +23,10 @@ def __replace_pyproject_version():
             f.write('\n'.join(file_lines))
 
 
-##################################################################
+if __name__ == '__main__':
+    __replace_pyproject_version()
 
-__replace_pyproject_version()
-
-test_suite = TestsSuite(True)
-test_suite.run_tests()
-test_suite.create_report()
-test_suite.erase_data()
+    test_suite = TestsSuite(True)
+    test_suite.run_tests()
+    test_suite.create_report()
+    test_suite.erase_data()

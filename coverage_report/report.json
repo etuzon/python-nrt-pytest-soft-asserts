@@ -1,12 +1,13 @@
 {
     "meta": {
-        "version": "7.3.0",
-        "timestamp": "2025-12-19T20:05:53.758318",
+        "format": 3,
+        "version": "7.13.1",
+        "timestamp": "2026-01-12T15:17:43.746220",
         "branch_coverage": true,
         "show_contexts": false
     },
     "files": {
-        "nrt_pytest_soft_asserts\\soft_asserts.py": {
+        "nrt_pytest_soft_asserts/soft_asserts.py": {
             "executed_lines": [
                 1,
                 2,
@@ -26,23 +27,16 @@
                 21,
                 24,
                 25,
-                26,
-                27,
-                28,
-                29,
-                30,
                 31,
                 33,
                 34,
                 38,
-                39,
                 45,
                 46,
                 47,
                 48,
                 49,
                 50,
-                51,
                 53,
                 54,
                 55,
@@ -325,16 +319,20 @@
                 485
             ],
             "summary": {
-                "covered_lines": 314,
-                "num_statements": 317,
-                "percent_covered": 99.06323185011709,
+                "covered_lines": 308,
+                "num_statements": 311,
+                "percent_covered": 98.9501312335958,
                 "percent_covered_display": "99",
                 "missing_lines": 3,
                 "excluded_lines": 0,
-                "num_branches": 110,
+                "percent_statements_covered": 99.03536977491962,
+                "percent_statements_covered_display": "99",
+                "num_branches": 70,
                 "num_partial_branches": 1,
-                "covered_branches": 109,
-                "missing_branches": 1
+                "covered_branches": 69,
+                "missing_branches": 1,
+                "percent_branches_covered": 98.57142857142857,
+                "percent_branches_covered_display": "99"
             },
             "missing_lines": [
                 59,
@@ -343,30 +341,6 @@
             ],
             "excluded_lines": [],
             "executed_branches": [
-                [
-                    16,
-                    15
-                ],
-                [
-                    16,
-                    19
-                ],
-                [
-                    20,
-                    -10
-                ],
-                [
-                    20,
-                    19
-                ],
-                [
-                    24,
-                    25
-                ],
-                [
-                    24,
-                    26
-                ],
                 [
                     69,
                     70
@@ -544,14 +518,6 @@
                     303
                 ],
                 [
-                    306,
-                    -280
-                ],
-                [
-                    306,
-                    305
-                ],
-                [
                     307,
                     -305
                 ],
@@ -566,70 +532,6 @@
                 [
                     320,
                     321
-                ],
-                [
-                    324,
-                    -324
-                ],
-                [
-                    324,
-                    324
-                ],
-                [
-                    324,
-                    334
-                ],
-                [
-                    334,
-                    -334
-                ],
-                [
-                    334,
-                    334
-                ],
-                [
-                    334,
-                    336
-                ],
-                [
-                    345,
-                    344
-                ],
-                [
-                    345,
-                    348
-                ],
-                [
-                    349,
-                    348
-                ],
-                [
-                    349,
-                    352
-                ],
-                [
-                    353,
-                    352
-                ],
-                [
-                    353,
-                    356
-                ],
-                [
-                    357,
-                    356
-                ],
-                [
-                    357,
-                    360
-                ],
-                [
-                    361,
-                    360
-                ],
-                [
-                    361,
-                    364
                 ],
                 [
                     384,
@@ -665,10 +567,6 @@
                 ],
                 [
                     400,
-                    400
-                ],
-                [
-                    400,
                     403
                 ],
                 [
@@ -685,10 +583,6 @@
                 ],
                 [
                     410,
-                    410
-                ],
-                [
-                    410,
                     413
                 ],
                 [
@@ -698,46 +592,6 @@
                 [
                     422,
                     423
-                ],
-                [
-                    426,
-                    425
-                ],
-                [
-                    426,
-                    429
-                ],
-                [
-                    430,
-                    429
-                ],
-                [
-                    430,
-                    433
-                ],
-                [
-                    434,
-                    433
-                ],
-                [
-                    434,
-                    437
-                ],
-                [
-                    438,
-                    437
-                ],
-                [
-                    438,
-                    441
-                ],
-                [
-                    442,
-                    441
-                ],
-                [
-                    442,
-                    452
                 ],
                 [
                     447,
@@ -756,44 +610,12 @@
                     450
                 ],
                 [
-                    453,
-                    452
-                ],
-                [
-                    453,
-                    457
-                ],
-                [
                     454,
                     -452
                 ],
                 [
                     454,
                     455
-                ],
-                [
-                    458,
-                    457
-                ],
-                [
-                    458,
-                    461
-                ],
-                [
-                    462,
-                    -38
-                ],
-                [
-                    462,
-                    461
-                ],
-                [
-                    478,
-                    477
-                ],
-                [
-                    478,
-                    483
                 ]
             ],
             "missing_branches": [
@@ -801,19 +623,2795 @@
                     393,
                     396
                 ]
-            ]
+            ],
+            "functions": {
+                "DuplicatedErrorsEnum.is_no_duplicated_errors_code_source": {
+                    "executed_lines": [
+                        17
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 16,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "DuplicatedErrorsEnum.is_no_duplicated_errors_code_source_and_error": {
+                    "executed_lines": [
+                        21
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 20,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "Failure.__str__": {
+                    "executed_lines": [
+                        34
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 33,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.__init__": {
+                    "executed_lines": [
+                        54,
+                        55,
+                        56
+                    ],
+                    "summary": {
+                        "covered_lines": 3,
+                        "num_statements": 3,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 53,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.set_on_failure": {
+                    "executed_lines": [],
+                    "summary": {
+                        "covered_lines": 0,
+                        "num_statements": 1,
+                        "percent_covered": 0.0,
+                        "percent_covered_display": "0",
+                        "missing_lines": 1,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 0.0,
+                        "percent_statements_covered_display": "0",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [
+                        59
+                    ],
+                    "excluded_lines": [],
+                    "start_line": 58,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.set_step": {
+                    "executed_lines": [
+                        62
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 61,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.unset_step": {
+                    "executed_lines": [
+                        65
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 64,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_true": {
+                    "executed_lines": [
+                        69,
+                        70,
+                        71,
+                        72,
+                        73,
+                        75
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 67,
+                    "executed_branches": [
+                        [
+                            69,
+                            70
+                        ],
+                        [
+                            69,
+                            75
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_false": {
+                    "executed_lines": [
+                        79,
+                        80,
+                        81,
+                        82,
+                        83,
+                        85
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 77,
+                    "executed_branches": [
+                        [
+                            79,
+                            80
+                        ],
+                        [
+                            79,
+                            85
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_equal": {
+                    "executed_lines": [
+                        89,
+                        90,
+                        91,
+                        92,
+                        93,
+                        95
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 87,
+                    "executed_branches": [
+                        [
+                            89,
+                            90
+                        ],
+                        [
+                            89,
+                            95
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_not_equal": {
+                    "executed_lines": [
+                        99,
+                        100,
+                        101,
+                        102,
+                        103,
+                        105
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 97,
+                    "executed_branches": [
+                        [
+                            99,
+                            100
+                        ],
+                        [
+                            99,
+                            105
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_greater": {
+                    "executed_lines": [
+                        109,
+                        110,
+                        111,
+                        112,
+                        113,
+                        115
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 107,
+                    "executed_branches": [
+                        [
+                            109,
+                            110
+                        ],
+                        [
+                            109,
+                            115
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_greater_equal": {
+                    "executed_lines": [
+                        120,
+                        121,
+                        122,
+                        123,
+                        124,
+                        126
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 117,
+                    "executed_branches": [
+                        [
+                            120,
+                            121
+                        ],
+                        [
+                            120,
+                            126
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_less": {
+                    "executed_lines": [
+                        130,
+                        131,
+                        132,
+                        133,
+                        134,
+                        136
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 128,
+                    "executed_branches": [
+                        [
+                            130,
+                            131
+                        ],
+                        [
+                            130,
+                            136
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_less_equal": {
+                    "executed_lines": [
+                        140,
+                        141,
+                        142,
+                        143,
+                        144,
+                        146
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 138,
+                    "executed_branches": [
+                        [
+                            140,
+                            141
+                        ],
+                        [
+                            140,
+                            146
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_is": {
+                    "executed_lines": [
+                        150,
+                        151,
+                        152,
+                        153,
+                        154,
+                        156
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 148,
+                    "executed_branches": [
+                        [
+                            150,
+                            151
+                        ],
+                        [
+                            150,
+                            156
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_is_not": {
+                    "executed_lines": [
+                        160,
+                        161,
+                        162,
+                        163,
+                        164,
+                        166
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 158,
+                    "executed_branches": [
+                        [
+                            160,
+                            161
+                        ],
+                        [
+                            160,
+                            166
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_is_none": {
+                    "executed_lines": [
+                        170,
+                        171,
+                        172,
+                        173,
+                        174,
+                        176
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 168,
+                    "executed_branches": [
+                        [
+                            170,
+                            171
+                        ],
+                        [
+                            170,
+                            176
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_is_not_none": {
+                    "executed_lines": [
+                        180,
+                        181,
+                        182,
+                        183,
+                        184,
+                        186
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 178,
+                    "executed_branches": [
+                        [
+                            180,
+                            181
+                        ],
+                        [
+                            180,
+                            186
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_in": {
+                    "executed_lines": [
+                        190,
+                        191,
+                        192,
+                        193,
+                        194,
+                        196
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 188,
+                    "executed_branches": [
+                        [
+                            190,
+                            191
+                        ],
+                        [
+                            190,
+                            196
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_not_in": {
+                    "executed_lines": [
+                        200,
+                        201,
+                        202,
+                        203,
+                        204,
+                        206
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 198,
+                    "executed_branches": [
+                        [
+                            200,
+                            201
+                        ],
+                        [
+                            200,
+                            206
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_len_equal": {
+                    "executed_lines": [
+                        211,
+                        212,
+                        213,
+                        214,
+                        215,
+                        217
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 208,
+                    "executed_branches": [
+                        [
+                            211,
+                            212
+                        ],
+                        [
+                            211,
+                            217
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_is_instance": {
+                    "executed_lines": [
+                        221,
+                        222,
+                        223,
+                        224,
+                        225,
+                        227
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 219,
+                    "executed_branches": [
+                        [
+                            221,
+                            222
+                        ],
+                        [
+                            221,
+                            227
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_not_is_instance": {
+                    "executed_lines": [
+                        231,
+                        232,
+                        233,
+                        234,
+                        235,
+                        237
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 229,
+                    "executed_branches": [
+                        [
+                            231,
+                            232
+                        ],
+                        [
+                            231,
+                            237
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_almost_equal": {
+                    "executed_lines": [
+                        242,
+                        243,
+                        244,
+                        245,
+                        246,
+                        248
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 239,
+                    "executed_branches": [
+                        [
+                            242,
+                            243
+                        ],
+                        [
+                            242,
+                            248
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_not_almost_equal": {
+                    "executed_lines": [
+                        253,
+                        254,
+                        255,
+                        256,
+                        257,
+                        259
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 250,
+                    "executed_branches": [
+                        [
+                            253,
+                            254
+                        ],
+                        [
+                            253,
+                            259
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_raises": {
+                    "executed_lines": [
+                        263,
+                        264,
+                        265,
+                        266,
+                        267,
+                        268,
+                        269,
+                        270,
+                        271,
+                        272,
+                        274
+                    ],
+                    "summary": {
+                        "covered_lines": 11,
+                        "num_statements": 11,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 261,
+                    "executed_branches": [
+                        [
+                            269,
+                            270
+                        ],
+                        [
+                            269,
+                            274
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_raised_with": {
+                    "executed_lines": [
+                        278,
+                        280,
+                        282,
+                        283,
+                        285,
+                        289,
+                        292,
+                        305,
+                        306,
+                        310
+                    ],
+                    "summary": {
+                        "covered_lines": 10,
+                        "num_statements": 10,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 276,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_raised_with.AssertRaises.__init__": {
+                    "executed_lines": [
+                        286,
+                        287
+                    ],
+                    "summary": {
+                        "covered_lines": 2,
+                        "num_statements": 2,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 285,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_raised_with.AssertRaises.__enter__": {
+                    "executed_lines": [
+                        290
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 289,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_raised_with.AssertRaises.__exit__": {
+                    "executed_lines": [
+                        294,
+                        295,
+                        296,
+                        297,
+                        298,
+                        299,
+                        300,
+                        301,
+                        303
+                    ],
+                    "summary": {
+                        "covered_lines": 9,
+                        "num_statements": 9,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 4,
+                        "num_partial_branches": 0,
+                        "covered_branches": 4,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 292,
+                    "executed_branches": [
+                        [
+                            294,
+                            295
+                        ],
+                        [
+                            294,
+                            298
+                        ],
+                        [
+                            298,
+                            299
+                        ],
+                        [
+                            298,
+                            303
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_raised_with.AssertRaises.__execute_on_failure": {
+                    "executed_lines": [
+                        307,
+                        308
+                    ],
+                    "summary": {
+                        "covered_lines": 2,
+                        "num_statements": 2,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 306,
+                    "executed_branches": [
+                        [
+                            307,
+                            -305
+                        ],
+                        [
+                            307,
+                            308
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.assert_all": {
+                    "executed_lines": [
+                        318,
+                        320,
+                        321,
+                        322,
+                        324,
+                        334,
+                        336
+                    ],
+                    "summary": {
+                        "covered_lines": 7,
+                        "num_statements": 7,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 312,
+                    "executed_branches": [
+                        [
+                            320,
+                            -312
+                        ],
+                        [
+                            320,
+                            321
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.is_in_failure_steps": {
+                    "executed_lines": [
+                        339
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 338,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.init_failure_steps": {
+                    "executed_lines": [
+                        342
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 341,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.failures": {
+                    "executed_lines": [
+                        346
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 345,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.failure_steps": {
+                    "executed_lines": [
+                        354
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 353,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.print_duplicate_errors": {
+                    "executed_lines": [
+                        362
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 361,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.__enter__": {
+                    "executed_lines": [
+                        365
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 364,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.__exit__": {
+                    "executed_lines": [
+                        368
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 367,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.__append_to_failures": {
+                    "executed_lines": [
+                        372,
+                        375,
+                        384,
+                        385,
+                        386
+                    ],
+                    "summary": {
+                        "covered_lines": 5,
+                        "num_statements": 5,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 370,
+                    "executed_branches": [
+                        [
+                            384,
+                            -370
+                        ],
+                        [
+                            384,
+                            385
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.__is_append_failure": {
+                    "executed_lines": [
+                        390,
+                        391,
+                        393,
+                        394
+                    ],
+                    "summary": {
+                        "covered_lines": 4,
+                        "num_statements": 5,
+                        "percent_covered": 77.77777777777777,
+                        "percent_covered_display": "78",
+                        "missing_lines": 1,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 80.0,
+                        "percent_statements_covered_display": "80",
+                        "num_branches": 4,
+                        "num_partial_branches": 1,
+                        "covered_branches": 3,
+                        "missing_branches": 1,
+                        "percent_branches_covered": 75.0,
+                        "percent_branches_covered_display": "75"
+                    },
+                    "missing_lines": [
+                        396
+                    ],
+                    "excluded_lines": [],
+                    "start_line": 388,
+                    "executed_branches": [
+                        [
+                            390,
+                            391
+                        ],
+                        [
+                            390,
+                            393
+                        ],
+                        [
+                            393,
+                            394
+                        ]
+                    ],
+                    "missing_branches": [
+                        [
+                            393,
+                            396
+                        ]
+                    ]
+                },
+                "SoftAsserts.__is_code_source_failure_in_failures": {
+                    "executed_lines": [
+                        399,
+                        400,
+                        403,
+                        404,
+                        406
+                    ],
+                    "summary": {
+                        "covered_lines": 5,
+                        "num_statements": 5,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 4,
+                        "num_partial_branches": 0,
+                        "covered_branches": 4,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 398,
+                    "executed_branches": [
+                        [
+                            399,
+                            400
+                        ],
+                        [
+                            399,
+                            406
+                        ],
+                        [
+                            400,
+                            399
+                        ],
+                        [
+                            400,
+                            403
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.__is_code_source_and_error_failure_in_failures": {
+                    "executed_lines": [
+                        409,
+                        410,
+                        413,
+                        414,
+                        416
+                    ],
+                    "summary": {
+                        "covered_lines": 5,
+                        "num_statements": 5,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 4,
+                        "num_partial_branches": 0,
+                        "covered_branches": 4,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 408,
+                    "executed_branches": [
+                        [
+                            409,
+                            410
+                        ],
+                        [
+                            409,
+                            416
+                        ],
+                        [
+                            410,
+                            409
+                        ],
+                        [
+                            410,
+                            413
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.__execute_on_failure": {
+                    "executed_lines": [
+                        420,
+                        422,
+                        423
+                    ],
+                    "summary": {
+                        "covered_lines": 3,
+                        "num_statements": 3,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 418,
+                    "executed_branches": [
+                        [
+                            422,
+                            -418
+                        ],
+                        [
+                            422,
+                            423
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.set_logger": {
+                    "executed_lines": [
+                        427
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 426,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.unset_logger": {
+                    "executed_lines": [
+                        431
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 430,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.set_print_method": {
+                    "executed_lines": [
+                        435
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 434,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.unset_print_method": {
+                    "executed_lines": [
+                        439
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 438,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.__print_error_to_log": {
+                    "executed_lines": [
+                        443,
+                        445,
+                        447,
+                        448,
+                        449,
+                        450
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 4,
+                        "num_partial_branches": 0,
+                        "covered_branches": 4,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 442,
+                    "executed_branches": [
+                        [
+                            447,
+                            448
+                        ],
+                        [
+                            447,
+                            449
+                        ],
+                        [
+                            449,
+                            -441
+                        ],
+                        [
+                            449,
+                            450
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.__validate_params": {
+                    "executed_lines": [
+                        454,
+                        455
+                    ],
+                    "summary": {
+                        "covered_lines": 2,
+                        "num_statements": 2,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 2,
+                        "num_partial_branches": 0,
+                        "covered_branches": 2,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 453,
+                    "executed_branches": [
+                        [
+                            454,
+                            -452
+                        ],
+                        [
+                            454,
+                            455
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "SoftAsserts.__is_almost_equal": {
+                    "executed_lines": [
+                        459
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 458,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts.__get_failure_file_path_and_line_code_and_line_number": {
+                    "executed_lines": [
+                        464,
+                        465,
+                        466,
+                        467,
+                        468,
+                        470
+                    ],
+                    "summary": {
+                        "covered_lines": 6,
+                        "num_statements": 6,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 462,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "soft_asserts": {
+                    "executed_lines": [
+                        475,
+                        477,
+                        485
+                    ],
+                    "summary": {
+                        "covered_lines": 3,
+                        "num_statements": 3,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 473,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "soft_asserts.soft_asserts_wrapper": {
+                    "executed_lines": [
+                        478,
+                        483
+                    ],
+                    "summary": {
+                        "covered_lines": 2,
+                        "num_statements": 2,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 475,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "soft_asserts.soft_asserts_wrapper.soft_asserts_func_wrapper": {
+                    "executed_lines": [
+                        479,
+                        480
+                    ],
+                    "summary": {
+                        "covered_lines": 2,
+                        "num_statements": 3,
+                        "percent_covered": 66.66666666666667,
+                        "percent_covered_display": "67",
+                        "missing_lines": 1,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 66.66666666666667,
+                        "percent_statements_covered_display": "67",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [
+                        481
+                    ],
+                    "excluded_lines": [],
+                    "start_line": 478,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "": {
+                    "executed_lines": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        10,
+                        12,
+                        13,
+                        15,
+                        16,
+                        19,
+                        20,
+                        24,
+                        25,
+                        31,
+                        33,
+                        38,
+                        45,
+                        46,
+                        47,
+                        48,
+                        49,
+                        50,
+                        53,
+                        58,
+                        61,
+                        64,
+                        67,
+                        77,
+                        87,
+                        97,
+                        107,
+                        117,
+                        128,
+                        138,
+                        148,
+                        158,
+                        168,
+                        178,
+                        188,
+                        198,
+                        208,
+                        219,
+                        229,
+                        239,
+                        250,
+                        261,
+                        276,
+                        312,
+                        338,
+                        341,
+                        344,
+                        345,
+                        348,
+                        349,
+                        352,
+                        353,
+                        356,
+                        357,
+                        360,
+                        361,
+                        364,
+                        367,
+                        370,
+                        388,
+                        398,
+                        408,
+                        418,
+                        425,
+                        426,
+                        429,
+                        430,
+                        433,
+                        434,
+                        437,
+                        438,
+                        441,
+                        442,
+                        452,
+                        453,
+                        457,
+                        458,
+                        461,
+                        462,
+                        473
+                    ],
+                    "summary": {
+                        "covered_lines": 87,
+                        "num_statements": 87,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 1,
+                    "executed_branches": [],
+                    "missing_branches": []
+                }
+            },
+            "classes": {
+                "DuplicatedErrorsEnum": {
+                    "executed_lines": [
+                        17,
+                        21
+                    ],
+                    "summary": {
+                        "covered_lines": 2,
+                        "num_statements": 2,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 10,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "Failure": {
+                    "executed_lines": [
+                        34
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 25,
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "SoftAsserts": {
+                    "executed_lines": [
+                        54,
+                        55,
+                        56,
+                        62,
+                        65,
+                        69,
+                        70,
+                        71,
+                        72,
+                        73,
+                        75,
+                        79,
+                        80,
+                        81,
+                        82,
+                        83,
+                        85,
+                        89,
+                        90,
+                        91,
+                        92,
+                        93,
+                        95,
+                        99,
+                        100,
+                        101,
+                        102,
+                        103,
+                        105,
+                        109,
+                        110,
+                        111,
+                        112,
+                        113,
+                        115,
+                        120,
+                        121,
+                        122,
+                        123,
+                        124,
+                        126,
+                        130,
+                        131,
+                        132,
+                        133,
+                        134,
+                        136,
+                        140,
+                        141,
+                        142,
+                        143,
+                        144,
+                        146,
+                        150,
+                        151,
+                        152,
+                        153,
+                        154,
+                        156,
+                        160,
+                        161,
+                        162,
+                        163,
+                        164,
+                        166,
+                        170,
+                        171,
+                        172,
+                        173,
+                        174,
+                        176,
+                        180,
+                        181,
+                        182,
+                        183,
+                        184,
+                        186,
+                        190,
+                        191,
+                        192,
+                        193,
+                        194,
+                        196,
+                        200,
+                        201,
+                        202,
+                        203,
+                        204,
+                        206,
+                        211,
+                        212,
+                        213,
+                        214,
+                        215,
+                        217,
+                        221,
+                        222,
+                        223,
+                        224,
+                        225,
+                        227,
+                        231,
+                        232,
+                        233,
+                        234,
+                        235,
+                        237,
+                        242,
+                        243,
+                        244,
+                        245,
+                        246,
+                        248,
+                        253,
+                        254,
+                        255,
+                        256,
+                        257,
+                        259,
+                        263,
+                        264,
+                        265,
+                        266,
+                        267,
+                        268,
+                        269,
+                        270,
+                        271,
+                        272,
+                        274,
+                        278,
+                        280,
+                        282,
+                        283,
+                        285,
+                        289,
+                        292,
+                        305,
+                        306,
+                        310,
+                        318,
+                        320,
+                        321,
+                        322,
+                        324,
+                        334,
+                        336,
+                        339,
+                        342,
+                        346,
+                        350,
+                        354,
+                        358,
+                        362,
+                        365,
+                        368,
+                        372,
+                        375,
+                        384,
+                        385,
+                        386,
+                        390,
+                        391,
+                        393,
+                        394,
+                        399,
+                        400,
+                        403,
+                        404,
+                        406,
+                        409,
+                        410,
+                        413,
+                        414,
+                        416,
+                        420,
+                        422,
+                        423,
+                        427,
+                        431,
+                        435,
+                        439,
+                        443,
+                        445,
+                        447,
+                        448,
+                        449,
+                        450,
+                        454,
+                        455,
+                        459,
+                        464,
+                        465,
+                        466,
+                        467,
+                        468,
+                        470
+                    ],
+                    "summary": {
+                        "covered_lines": 197,
+                        "num_statements": 199,
+                        "percent_covered": 98.85931558935361,
+                        "percent_covered_display": "99",
+                        "missing_lines": 2,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 98.99497487437186,
+                        "percent_statements_covered_display": "99",
+                        "num_branches": 64,
+                        "num_partial_branches": 1,
+                        "covered_branches": 63,
+                        "missing_branches": 1,
+                        "percent_branches_covered": 98.4375,
+                        "percent_branches_covered_display": "98"
+                    },
+                    "missing_lines": [
+                        59,
+                        396
+                    ],
+                    "excluded_lines": [],
+                    "start_line": 38,
+                    "executed_branches": [
+                        [
+                            69,
+                            70
+                        ],
+                        [
+                            69,
+                            75
+                        ],
+                        [
+                            79,
+                            80
+                        ],
+                        [
+                            79,
+                            85
+                        ],
+                        [
+                            89,
+                            90
+                        ],
+                        [
+                            89,
+                            95
+                        ],
+                        [
+                            99,
+                            100
+                        ],
+                        [
+                            99,
+                            105
+                        ],
+                        [
+                            109,
+                            110
+                        ],
+                        [
+                            109,
+                            115
+                        ],
+                        [
+                            120,
+                            121
+                        ],
+                        [
+                            120,
+                            126
+                        ],
+                        [
+                            130,
+                            131
+                        ],
+                        [
+                            130,
+                            136
+                        ],
+                        [
+                            140,
+                            141
+                        ],
+                        [
+                            140,
+                            146
+                        ],
+                        [
+                            150,
+                            151
+                        ],
+                        [
+                            150,
+                            156
+                        ],
+                        [
+                            160,
+                            161
+                        ],
+                        [
+                            160,
+                            166
+                        ],
+                        [
+                            170,
+                            171
+                        ],
+                        [
+                            170,
+                            176
+                        ],
+                        [
+                            180,
+                            181
+                        ],
+                        [
+                            180,
+                            186
+                        ],
+                        [
+                            190,
+                            191
+                        ],
+                        [
+                            190,
+                            196
+                        ],
+                        [
+                            200,
+                            201
+                        ],
+                        [
+                            200,
+                            206
+                        ],
+                        [
+                            211,
+                            212
+                        ],
+                        [
+                            211,
+                            217
+                        ],
+                        [
+                            221,
+                            222
+                        ],
+                        [
+                            221,
+                            227
+                        ],
+                        [
+                            231,
+                            232
+                        ],
+                        [
+                            231,
+                            237
+                        ],
+                        [
+                            242,
+                            243
+                        ],
+                        [
+                            242,
+                            248
+                        ],
+                        [
+                            253,
+                            254
+                        ],
+                        [
+                            253,
+                            259
+                        ],
+                        [
+                            269,
+                            270
+                        ],
+                        [
+                            269,
+                            274
+                        ],
+                        [
+                            320,
+                            -312
+                        ],
+                        [
+                            320,
+                            321
+                        ],
+                        [
+                            384,
+                            -370
+                        ],
+                        [
+                            384,
+                            385
+                        ],
+                        [
+                            390,
+                            391
+                        ],
+                        [
+                            390,
+                            393
+                        ],
+                        [
+                            393,
+                            394
+                        ],
+                        [
+                            399,
+                            400
+                        ],
+                        [
+                            399,
+                            406
+                        ],
+                        [
+                            400,
+                            399
+                        ],
+                        [
+                            400,
+                            403
+                        ],
+                        [
+                            409,
+                            410
+                        ],
+                        [
+                            409,
+                            416
+                        ],
+                        [
+                            410,
+                            409
+                        ],
+                        [
+                            410,
+                            413
+                        ],
+                        [
+                            422,
+                            -418
+                        ],
+                        [
+                            422,
+                            423
+                        ],
+                        [
+                            447,
+                            448
+                        ],
+                        [
+                            447,
+                            449
+                        ],
+                        [
+                            449,
+                            -441
+                        ],
+                        [
+                            449,
+                            450
+                        ],
+                        [
+                            454,
+                            -452
+                        ],
+                        [
+                            454,
+                            455
+                        ]
+                    ],
+                    "missing_branches": [
+                        [
+                            393,
+                            396
+                        ]
+                    ]
+                },
+                "SoftAsserts.assert_raised_with.AssertRaises": {
+                    "executed_lines": [
+                        286,
+                        287,
+                        290,
+                        294,
+                        295,
+                        296,
+                        297,
+                        298,
+                        299,
+                        300,
+                        301,
+                        303,
+                        307,
+                        308
+                    ],
+                    "summary": {
+                        "covered_lines": 14,
+                        "num_statements": 14,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 100.0,
+                        "percent_statements_covered_display": "100",
+                        "num_branches": 6,
+                        "num_partial_branches": 0,
+                        "covered_branches": 6,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "start_line": 280,
+                    "executed_branches": [
+                        [
+                            294,
+                            295
+                        ],
+                        [
+                            294,
+                            298
+                        ],
+                        [
+                            298,
+                            299
+                        ],
+                        [
+                            298,
+                            303
+                        ],
+                        [
+                            307,
+                            -305
+                        ],
+                        [
+                            307,
+                            308
+                        ]
+                    ],
+                    "missing_branches": []
+                },
+                "": {
+                    "executed_lines": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        10,
+                        12,
+                        13,
+                        15,
+                        16,
+                        19,
+                        20,
+                        24,
+                        25,
+                        31,
+                        33,
+                        38,
+                        45,
+                        46,
+                        47,
+                        48,
+                        49,
+                        50,
+                        53,
+                        58,
+                        61,
+                        64,
+                        67,
+                        77,
+                        87,
+                        97,
+                        107,
+                        117,
+                        128,
+                        138,
+                        148,
+                        158,
+                        168,
+                        178,
+                        188,
+                        198,
+                        208,
+                        219,
+                        229,
+                        239,
+                        250,
+                        261,
+                        276,
+                        312,
+                        338,
+                        341,
+                        344,
+                        345,
+                        348,
+                        349,
+                        352,
+                        353,
+                        356,
+                        357,
+                        360,
+                        361,
+                        364,
+                        367,
+                        370,
+                        388,
+                        398,
+                        408,
+                        418,
+                        425,
+                        426,
+                        429,
+                        430,
+                        433,
+                        434,
+                        437,
+                        438,
+                        441,
+                        442,
+                        452,
+                        453,
+                        457,
+                        458,
+                        461,
+                        462,
+                        473,
+                        475,
+                        477,
+                        478,
+                        479,
+                        480,
+                        483,
+                        485
+                    ],
+                    "summary": {
+                        "covered_lines": 94,
+                        "num_statements": 95,
+                        "percent_covered": 98.94736842105263,
+                        "percent_covered_display": "99",
+                        "missing_lines": 1,
+                        "excluded_lines": 0,
+                        "percent_statements_covered": 98.94736842105263,
+                        "percent_statements_covered_display": "99",
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0,
+                        "percent_branches_covered": 100.0,
+                        "percent_branches_covered_display": "100"
+                    },
+                    "missing_lines": [
+                        481
+                    ],
+                    "excluded_lines": [],
+                    "start_line": 1,
+                    "executed_branches": [],
+                    "missing_branches": []
+                }
+            }
         }
     },
     "totals": {
-        "covered_lines": 314,
-        "num_statements": 317,
-        "percent_covered": 99.06323185011709,
+        "covered_lines": 308,
+        "num_statements": 311,
+        "percent_covered": 98.9501312335958,
         "percent_covered_display": "99",
         "missing_lines": 3,
         "excluded_lines": 0,
-        "num_branches": 110,
+        "percent_statements_covered": 99.03536977491962,
+        "percent_statements_covered_display": "99",
+        "num_branches": 70,
         "num_partial_branches": 1,
-        "covered_branches": 109,
-        "missing_branches": 1
+        "covered_branches": 69,
+        "missing_branches": 1,
+        "percent_branches_covered": 98.57142857142857,
+        "percent_branches_covered_display": "99"
     }
 }

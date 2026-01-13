@@ -1,7 +1,7 @@
 venv*
-venv*/*
+.venv*
+.ideas
 .idea
-.idea/*
 **/__pycache__/**
 coverage_report/html
 coverage_report/html/*
