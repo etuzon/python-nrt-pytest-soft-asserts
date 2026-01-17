@@ -2,7 +2,7 @@
 
 name='nrt-pytest-soft-asserts'
 
-version='1.4.2test2'
+version='1.4.2test4'
 
 authors=[
 { name='Eyal Tuzon', email='eyal.tuzon.dev@gmail.com' },
