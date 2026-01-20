@@ -2,6 +2,10 @@
 
 ## Version History
 
+### Version 2.0.0
+
+- Support for asynchronous context managers. `async with SoftAsserts()` and `async with sa.assert_raised_with`.
+
 ### Version 1.4.1
 
 - Add new assertion method: `assert_greater`, `assert_greater_equal`, `assert_less`, `assert_less_equal`.

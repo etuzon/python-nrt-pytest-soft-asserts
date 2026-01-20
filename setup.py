@@ -39,7 +39,6 @@ setup(
         'Topic :: Software Development :: Testing',
         'Topic :: Software Development :: Testing :: Unit',
         'Topic :: Software Development :: Libraries',
-        'Topic :: Utilities',
         'Development Status :: 5 - Production/Stable'
     ],
     install_requires=[requirements],

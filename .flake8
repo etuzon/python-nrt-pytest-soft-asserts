@@ -11,6 +11,9 @@ exclude =
     dist,
     .flask8,
     venv
+
 max-complexity = 10
+
+max-line-length = 100
 
 filename = *.py
