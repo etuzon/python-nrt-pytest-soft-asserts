@@ -43,9 +43,9 @@ To verify the soft asserts in the middle of the test, call `sa.assert_all()`.<br
 <br/>
 assert_all() will raise _AssertionError_ if any of the asserts failed.<br/>
 
-### With statement
+### ith statement
 
-Soft asserts can be used in 'with' statement.<br/>
+Soft asserts can be used in `with` statement.<br/>
 <br/>
 #### Example 1
 
@@ -76,11 +76,30 @@ with SoftAsserts() as sa:
     sa.assert_equal(1, 2, 'Second assert failed')
 ```
 
+### aync context manager
+Soft asserts can be used in `async with` statement.<br/>
+<br/>
+#### Example
+```python
+import asyncio
+from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts
+
+async def print_on_failure():
+    print('Assertion failed!')
+async def test_assert_with_async_statement():
+    async with SoftAsserts() as sa:
+        sa.assert_true(False, 'First assert failed')
+        sa.assert_equal(1, 2, 'Second assert failed')
+    
+asyncio.run(test_assert_with_async_statement())
+```
+
 ### soft_asserts decorator
 Soft asserts can be used as a decorator.<br/>
+Soft asserts decorator supports also async test functions.<br/>
 The assert_all() method will be run in the decorator, so it is not needed to run in the test itself.<br/>
 
-#### Example
+#### Example 1
 
 ```python
 import pytest
@@ -91,6 +110,21 @@ sa = SoftAsserts()
 
 @soft_asserts(sa=sa)
 def test_assert_with_decorator():
+    sa.assert_true(False, 'First assert failed')
+    sa.assert_equal(1, 2, 'Second assert failed')
+```
+
+#### Example 2
+
+```python
+import pytest
+from nrt_pytest_soft_asserts.soft_asserts import SoftAsserts, soft_asserts
+
+
+sa = SoftAsserts()
+
+@soft_asserts(sa=sa)
+async def test_assert_with_decorator_async():
     sa.assert_true(False, 'First assert failed')
     sa.assert_equal(1, 2, 'Second assert failed')
 ```
